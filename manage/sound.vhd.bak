@@ -1,0 +1,29 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity sound is
+  port(chin:in std_logic_vector(3 downto 0);
+       fre_in:in std_logic;
+		 fre_out:out std_logic);
+end sound;
+
+architecture fun1 of sound is
+signal number,count:integer;
+
+begin 
+  process(chin,fre_in)
+  begin
+  if(chin="0000") then number<=2;
+  elsif(chin="0001") then number<=3;
+  elsif(chin="0010") then number<=4;
+  elsif(chin="0100") then number<=5;
+  elsif(chin="1000") then number<=6;
+  end if; 
+    if(fre_in'event and fre_in='1') then 
+	   if(count<=number) then fre_out<='1';count<=count+1;
+		elsif(count>number) then fre_out<='0';count<=count+1;
+		elsif(count>=10) then fre_out<='0';count<=0;
+		end if;
+	 end if;
+  end process;
+end architecture; 

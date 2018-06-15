@@ -1,0 +1,902 @@
+Analysis & Synthesis report for manage
+Mon May 28 16:47:44 2018
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: scan_ledt:inst4|count4:inst|74161:inst
+ 14. Parameter Settings for Inferred Entity Instance: replaynum:inst2|lpm_divide:Div0
+ 15. Parameter Settings for Inferred Entity Instance: devide:inst3|lpm_divide:Div0
+ 16. Parameter Settings for Inferred Entity Instance: devide:inst3|lpm_divide:Div1
+ 17. Parameter Settings for Inferred Entity Instance: devide:inst3|lpm_divide:Mod0
+ 18. Parameter Settings for Inferred Entity Instance: devide:inst3|lpm_divide:Mod1
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Mon May 28 16:47:44 2018       ;
+; Quartus II 64-Bit Version   ; 13.0.0 Build 156 04/24/2013 SJ Full Version ;
+; Revision Name               ; manage                                      ;
+; Top-level Entity Name       ; manage                                      ;
+; Family                      ; Cyclone                                     ;
+; Total logic elements        ; 4,890                                       ;
+; Total pins                  ; 14                                          ;
+; Total virtual pins          ; 0                                           ;
+; Total memory bits           ; 0                                           ;
+; Total PLLs                  ; 0                                           ;
++-----------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP1C6Q240C8        ;                    ;
+; Top-level entity name                                                      ; manage             ; manage             ;
+; Family name                                                                ; Cyclone            ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                       ;
++----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                       ; Library ;
++----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------------+---------+
+; ../../count4/count4.bdf          ; yes             ; User Block Diagram/Schematic File        ; h:/altera/13.0/count4/count4.bdf                                   ;         ;
+; ../../mux4_3_1/mux4_3_1.vhd      ; yes             ; User VHDL File                           ; h:/altera/13.0/mux4_3_1/mux4_3_1.vhd                               ;         ;
+; ../../decoder2/decoder2.vhd      ; yes             ; User VHDL File                           ; h:/altera/13.0/decoder2/decoder2.vhd                               ;         ;
+; manage.bdf                       ; yes             ; User Block Diagram/Schematic File        ; C:/Desktop/leida/manage/manage.bdf                                 ;         ;
+; selfcount.vhd                    ; yes             ; Auto-Found VHDL File                     ; C:/Desktop/leida/manage/selfcount.vhd                              ;         ;
+; scan_ledt.bdf                    ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Desktop/leida/manage/scan_ledt.bdf                              ;         ;
+; 7449.bdf                         ; yes             ; Megafunction                             ; h:/altera/13.0/quartus/libraries/others/maxplus2/7449.bdf          ;         ;
+; 74161.tdf                        ; yes             ; Megafunction                             ; h:/altera/13.0/quartus/libraries/others/maxplus2/74161.tdf         ;         ;
+; aglobal.inc                      ; yes             ; Megafunction                             ; h:/altera/13.0/quartus/libraries/megafunctions/aglobal.inc         ;         ;
+; f74161.bdf                       ; yes             ; Megafunction                             ; h:/altera/13.0/quartus/libraries/others/maxplus2/f74161.bdf        ;         ;
+; frediv1.vhd                      ; yes             ; Auto-Found VHDL File                     ; C:/Desktop/leida/manage/frediv1.vhd                                ;         ;
+; devide.vhd                       ; yes             ; Auto-Found VHDL File                     ; C:/Desktop/leida/manage/devide.vhd                                 ;         ;
+; replaynum.vhd                    ; yes             ; Auto-Found VHDL File                     ; C:/Desktop/leida/manage/replaynum.vhd                              ;         ;
+; numcount.vhd                     ; yes             ; Auto-Found VHDL File                     ; C:/Desktop/leida/manage/numcount.vhd                               ;         ;
+; voice3.vhd                       ; yes             ; Auto-Found VHDL File                     ; C:/Desktop/leida/manage/voice3.vhd                                 ;         ;
+; voice2.vhd                       ; yes             ; Auto-Found VHDL File                     ; C:/Desktop/leida/manage/voice2.vhd                                 ;         ;
+; frediv2.vhd                      ; yes             ; Auto-Found VHDL File                     ; C:/Desktop/leida/manage/frediv2.vhd                                ;         ;
+; diffdis.vhd                      ; yes             ; Auto-Found VHDL File                     ; C:/Desktop/leida/manage/diffdis.vhd                                ;         ;
+; replaycount.vhd                  ; yes             ; Auto-Found VHDL File                     ; C:/Desktop/leida/manage/replaycount.vhd                            ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                             ; h:/altera/13.0/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                             ; h:/altera/13.0/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                             ; h:/altera/13.0/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                             ; h:/altera/13.0/quartus/libraries/megafunctions/aglobal130.inc      ;         ;
+; db/lpm_divide_2mo.tdf            ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/lpm_divide_2mo.tdf                      ;         ;
+; db/abs_divider_1dg.tdf           ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/abs_divider_1dg.tdf                     ;         ;
+; db/alt_u_div_ste.tdf             ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/alt_u_div_ste.tdf                       ;         ;
+; db/add_sub_3dc.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_3dc.tdf                         ;         ;
+; db/add_sub_4dc.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_4dc.tdf                         ;         ;
+; db/add_sub_kec.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_kec.tdf                         ;         ;
+; db/add_sub_lec.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_lec.tdf                         ;         ;
+; db/add_sub_5dc.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_5dc.tdf                         ;         ;
+; db/add_sub_6dc.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_6dc.tdf                         ;         ;
+; db/add_sub_7dc.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_7dc.tdf                         ;         ;
+; db/add_sub_8dc.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_8dc.tdf                         ;         ;
+; db/add_sub_9dc.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_9dc.tdf                         ;         ;
+; db/add_sub_adc.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_adc.tdf                         ;         ;
+; db/add_sub_bdc.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_bdc.tdf                         ;         ;
+; db/add_sub_jec.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_jec.tdf                         ;         ;
+; db/lpm_abs_bk9.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/lpm_abs_bk9.tdf                         ;         ;
+; db/lpm_abs_ek9.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/lpm_abs_ek9.tdf                         ;         ;
+; db/add_sub_e6f.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_e6f.tdf                         ;         ;
+; db/add_sub_b6f.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_b6f.tdf                         ;         ;
+; db/lpm_divide_oko.tdf            ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/lpm_divide_oko.tdf                      ;         ;
+; db/abs_divider_nbg.tdf           ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/abs_divider_nbg.tdf                     ;         ;
+; db/alt_u_div_8re.tdf             ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/alt_u_div_8re.tdf                       ;         ;
+; db/lpm_abs_1j9.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/lpm_abs_1j9.tdf                         ;         ;
+; db/add_sub_15f.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_15f.tdf                         ;         ;
+; db/lpm_divide_lko.tdf            ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/lpm_divide_lko.tdf                      ;         ;
+; db/abs_divider_kbg.tdf           ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/abs_divider_kbg.tdf                     ;         ;
+; db/alt_u_div_2re.tdf             ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/alt_u_div_2re.tdf                       ;         ;
+; db/lpm_abs_ui9.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/lpm_abs_ui9.tdf                         ;         ;
+; db/add_sub_u4f.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_u4f.tdf                         ;         ;
+; db/lpm_divide_h0m.tdf            ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/lpm_divide_h0m.tdf                      ;         ;
+; db/sign_div_unsign_anh.tdf       ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/sign_div_unsign_anh.tdf                 ;         ;
+; db/alt_u_div_4ue.tdf             ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/alt_u_div_4ue.tdf                       ;         ;
+; db/add_sub_mec.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_mec.tdf                         ;         ;
+; db/add_sub_nec.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_nec.tdf                         ;         ;
+; db/add_sub_oec.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_oec.tdf                         ;         ;
+; db/add_sub_pec.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_pec.tdf                         ;         ;
+; db/add_sub_qec.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_qec.tdf                         ;         ;
+; db/add_sub_rec.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_rec.tdf                         ;         ;
+; db/add_sub_sec.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_sec.tdf                         ;         ;
+; db/add_sub_tec.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_tec.tdf                         ;         ;
+; db/add_sub_uec.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_uec.tdf                         ;         ;
+; db/add_sub_vec.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_vec.tdf                         ;         ;
+; db/add_sub_0fc.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_0fc.tdf                         ;         ;
+; db/add_sub_1fc.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_1fc.tdf                         ;         ;
+; db/add_sub_2fc.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_2fc.tdf                         ;         ;
+; db/add_sub_3fc.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_3fc.tdf                         ;         ;
+; db/add_sub_4fc.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_4fc.tdf                         ;         ;
+; db/add_sub_5fc.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_5fc.tdf                         ;         ;
+; db/add_sub_6fc.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_6fc.tdf                         ;         ;
+; db/add_sub_7fc.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_7fc.tdf                         ;         ;
+; db/add_sub_8fc.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_8fc.tdf                         ;         ;
+; db/add_sub_9fc.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_9fc.tdf                         ;         ;
+; db/add_sub_afc.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Desktop/leida/manage/db/add_sub_afc.tdf                         ;         ;
++----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                             ;
++---------------------------------------------+-------------------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                                     ;
++---------------------------------------------+-------------------------------------------------------------------------------------------+
+; Total logic elements                        ; 4890                                                                                      ;
+;     -- Combinational with no register       ; 4810                                                                                      ;
+;     -- Register only                        ; 15                                                                                        ;
+;     -- Combinational with a register        ; 65                                                                                        ;
+;                                             ;                                                                                           ;
+; Logic element usage by number of LUT inputs ;                                                                                           ;
+;     -- 4 input functions                    ; 1217                                                                                      ;
+;     -- 3 input functions                    ; 1515                                                                                      ;
+;     -- 2 input functions                    ; 1654                                                                                      ;
+;     -- 1 input functions                    ; 489                                                                                       ;
+;     -- 0 input functions                    ; 0                                                                                         ;
+;                                             ;                                                                                           ;
+; Logic elements by mode                      ;                                                                                           ;
+;     -- normal mode                          ; 3057                                                                                      ;
+;     -- arithmetic mode                      ; 1833                                                                                      ;
+;     -- qfbk mode                            ; 0                                                                                         ;
+;     -- register cascade mode                ; 0                                                                                         ;
+;     -- synchronous clear/load mode          ; 9                                                                                         ;
+;     -- asynchronous clear/load mode         ; 39                                                                                        ;
+;                                             ;                                                                                           ;
+; Total registers                             ; 80                                                                                        ;
+; Total logic cells in carry chains           ; 2076                                                                                      ;
+; I/O pins                                    ; 14                                                                                        ;
+; Maximum fan-out node                        ; replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|_~1 ;
+; Maximum fan-out                             ; 121                                                                                       ;
+; Total fan-out                               ; 13397                                                                                     ;
+; Average fan-out                             ; 2.73                                                                                      ;
++---------------------------------------------+-------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                            ;
++---------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                  ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                                         ; Library Name ;
++---------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |manage                                     ; 4890 (0)    ; 80           ; 0           ; 14   ; 0            ; 4810 (0)     ; 15 (0)            ; 65 (0)           ; 2076 (0)        ; 0 (0)      ; |manage                                                                                                                                     ;              ;
+;    |devide:inst3|                           ; 3973 (78)   ; 0            ; 0           ; 0    ; 0            ; 3973 (78)    ; 0 (0)             ; 0 (0)            ; 1650 (60)       ; 0 (0)      ; |manage|devide:inst3                                                                                                                        ;              ;
+;       |lpm_divide:Div0|                     ; 435 (0)     ; 0            ; 0           ; 0    ; 0            ; 435 (0)      ; 0 (0)             ; 0 (0)            ; 218 (0)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0                                                                                                        ;              ;
+;          |lpm_divide_oko:auto_generated|    ; 435 (0)     ; 0            ; 0           ; 0    ; 0            ; 435 (0)      ; 0 (0)             ; 0 (0)            ; 218 (0)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated                                                                          ;              ;
+;             |abs_divider_nbg:divider|       ; 435 (0)     ; 0            ; 0           ; 0    ; 0            ; 435 (0)      ; 0 (0)             ; 0 (0)            ; 218 (0)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated|abs_divider_nbg:divider                                                  ;              ;
+;                |add_sub_e6f:compl_add_quot| ; 5 (5)       ; 0            ; 0           ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated|abs_divider_nbg:divider|add_sub_e6f:compl_add_quot                       ;              ;
+;                |alt_u_div_8re:divider|      ; 405 (217)   ; 0            ; 0           ; 0    ; 0            ; 405 (217)    ; 0 (0)             ; 0 (0)            ; 188 (0)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated|abs_divider_nbg:divider|alt_u_div_8re:divider                            ;              ;
+;                   |add_sub_bdc:add_sub_13|  ; 10 (10)     ; 0            ; 0           ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated|abs_divider_nbg:divider|alt_u_div_8re:divider|add_sub_bdc:add_sub_13     ;              ;
+;                   |add_sub_bdc:add_sub_14|  ; 10 (10)     ; 0            ; 0           ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated|abs_divider_nbg:divider|alt_u_div_8re:divider|add_sub_bdc:add_sub_14     ;              ;
+;                   |add_sub_bdc:add_sub_15|  ; 10 (10)     ; 0            ; 0           ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated|abs_divider_nbg:divider|alt_u_div_8re:divider|add_sub_bdc:add_sub_15     ;              ;
+;                   |add_sub_bdc:add_sub_16|  ; 10 (10)     ; 0            ; 0           ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated|abs_divider_nbg:divider|alt_u_div_8re:divider|add_sub_bdc:add_sub_16     ;              ;
+;                   |add_sub_bdc:add_sub_17|  ; 10 (10)     ; 0            ; 0           ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated|abs_divider_nbg:divider|alt_u_div_8re:divider|add_sub_bdc:add_sub_17     ;              ;
+;                   |add_sub_bdc:add_sub_18|  ; 10 (10)     ; 0            ; 0           ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated|abs_divider_nbg:divider|alt_u_div_8re:divider|add_sub_bdc:add_sub_18     ;              ;
+;                   |add_sub_bdc:add_sub_19|  ; 10 (10)     ; 0            ; 0           ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated|abs_divider_nbg:divider|alt_u_div_8re:divider|add_sub_bdc:add_sub_19     ;              ;
+;                   |add_sub_bdc:add_sub_20|  ; 10 (10)     ; 0            ; 0           ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated|abs_divider_nbg:divider|alt_u_div_8re:divider|add_sub_bdc:add_sub_20     ;              ;
+;                   |add_sub_bdc:add_sub_21|  ; 10 (10)     ; 0            ; 0           ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated|abs_divider_nbg:divider|alt_u_div_8re:divider|add_sub_bdc:add_sub_21     ;              ;
+;                   |add_sub_bdc:add_sub_22|  ; 10 (10)     ; 0            ; 0           ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated|abs_divider_nbg:divider|alt_u_div_8re:divider|add_sub_bdc:add_sub_22     ;              ;
+;                   |add_sub_bdc:add_sub_23|  ; 10 (10)     ; 0            ; 0           ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated|abs_divider_nbg:divider|alt_u_div_8re:divider|add_sub_bdc:add_sub_23     ;              ;
+;                   |add_sub_bdc:add_sub_24|  ; 10 (10)     ; 0            ; 0           ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated|abs_divider_nbg:divider|alt_u_div_8re:divider|add_sub_bdc:add_sub_24     ;              ;
+;                   |add_sub_bdc:add_sub_25|  ; 10 (10)     ; 0            ; 0           ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated|abs_divider_nbg:divider|alt_u_div_8re:divider|add_sub_bdc:add_sub_25     ;              ;
+;                   |add_sub_bdc:add_sub_26|  ; 10 (10)     ; 0            ; 0           ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated|abs_divider_nbg:divider|alt_u_div_8re:divider|add_sub_bdc:add_sub_26     ;              ;
+;                   |add_sub_bdc:add_sub_27|  ; 10 (10)     ; 0            ; 0           ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated|abs_divider_nbg:divider|alt_u_div_8re:divider|add_sub_bdc:add_sub_27     ;              ;
+;                   |add_sub_bdc:add_sub_28|  ; 10 (10)     ; 0            ; 0           ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated|abs_divider_nbg:divider|alt_u_div_8re:divider|add_sub_bdc:add_sub_28     ;              ;
+;                   |add_sub_bdc:add_sub_29|  ; 10 (10)     ; 0            ; 0           ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated|abs_divider_nbg:divider|alt_u_div_8re:divider|add_sub_bdc:add_sub_29     ;              ;
+;                   |add_sub_bdc:add_sub_30|  ; 10 (10)     ; 0            ; 0           ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated|abs_divider_nbg:divider|alt_u_div_8re:divider|add_sub_bdc:add_sub_30     ;              ;
+;                   |add_sub_bdc:add_sub_31|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated|abs_divider_nbg:divider|alt_u_div_8re:divider|add_sub_bdc:add_sub_31     ;              ;
+;                |lpm_abs_ek9:my_abs_num|     ; 25 (25)     ; 0            ; 0           ; 0    ; 0            ; 25 (25)      ; 0 (0)             ; 0 (0)            ; 25 (25)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div0|lpm_divide_oko:auto_generated|abs_divider_nbg:divider|lpm_abs_ek9:my_abs_num                           ;              ;
+;       |lpm_divide:Div1|                     ; 431 (0)     ; 0            ; 0           ; 0    ; 0            ; 431 (0)      ; 0 (0)             ; 0 (0)            ; 231 (0)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1                                                                                                        ;              ;
+;          |lpm_divide_lko:auto_generated|    ; 431 (0)     ; 0            ; 0           ; 0    ; 0            ; 431 (0)      ; 0 (0)             ; 0 (0)            ; 231 (0)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated                                                                          ;              ;
+;             |abs_divider_kbg:divider|       ; 431 (30)    ; 0            ; 0           ; 0    ; 0            ; 431 (30)     ; 0 (0)             ; 0 (0)            ; 231 (0)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider                                                  ;              ;
+;                |add_sub_e6f:compl_add_quot| ; 32 (32)     ; 0            ; 0           ; 0    ; 0            ; 32 (32)      ; 0 (0)             ; 0 (0)            ; 32 (32)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|add_sub_e6f:compl_add_quot                       ;              ;
+;                |alt_u_div_2re:divider|      ; 343 (169)   ; 0            ; 0           ; 0    ; 0            ; 343 (169)    ; 0 (0)             ; 0 (0)            ; 174 (0)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|alt_u_div_2re:divider                            ;              ;
+;                   |add_sub_8dc:add_sub_10|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|alt_u_div_2re:divider|add_sub_8dc:add_sub_10     ;              ;
+;                   |add_sub_8dc:add_sub_11|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|alt_u_div_2re:divider|add_sub_8dc:add_sub_11     ;              ;
+;                   |add_sub_8dc:add_sub_12|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|alt_u_div_2re:divider|add_sub_8dc:add_sub_12     ;              ;
+;                   |add_sub_8dc:add_sub_13|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|alt_u_div_2re:divider|add_sub_8dc:add_sub_13     ;              ;
+;                   |add_sub_8dc:add_sub_14|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|alt_u_div_2re:divider|add_sub_8dc:add_sub_14     ;              ;
+;                   |add_sub_8dc:add_sub_15|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|alt_u_div_2re:divider|add_sub_8dc:add_sub_15     ;              ;
+;                   |add_sub_8dc:add_sub_16|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|alt_u_div_2re:divider|add_sub_8dc:add_sub_16     ;              ;
+;                   |add_sub_8dc:add_sub_17|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|alt_u_div_2re:divider|add_sub_8dc:add_sub_17     ;              ;
+;                   |add_sub_8dc:add_sub_18|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|alt_u_div_2re:divider|add_sub_8dc:add_sub_18     ;              ;
+;                   |add_sub_8dc:add_sub_19|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|alt_u_div_2re:divider|add_sub_8dc:add_sub_19     ;              ;
+;                   |add_sub_8dc:add_sub_20|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|alt_u_div_2re:divider|add_sub_8dc:add_sub_20     ;              ;
+;                   |add_sub_8dc:add_sub_21|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|alt_u_div_2re:divider|add_sub_8dc:add_sub_21     ;              ;
+;                   |add_sub_8dc:add_sub_22|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|alt_u_div_2re:divider|add_sub_8dc:add_sub_22     ;              ;
+;                   |add_sub_8dc:add_sub_23|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|alt_u_div_2re:divider|add_sub_8dc:add_sub_23     ;              ;
+;                   |add_sub_8dc:add_sub_24|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|alt_u_div_2re:divider|add_sub_8dc:add_sub_24     ;              ;
+;                   |add_sub_8dc:add_sub_25|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|alt_u_div_2re:divider|add_sub_8dc:add_sub_25     ;              ;
+;                   |add_sub_8dc:add_sub_26|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|alt_u_div_2re:divider|add_sub_8dc:add_sub_26     ;              ;
+;                   |add_sub_8dc:add_sub_27|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|alt_u_div_2re:divider|add_sub_8dc:add_sub_27     ;              ;
+;                   |add_sub_8dc:add_sub_28|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|alt_u_div_2re:divider|add_sub_8dc:add_sub_28     ;              ;
+;                   |add_sub_8dc:add_sub_29|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|alt_u_div_2re:divider|add_sub_8dc:add_sub_29     ;              ;
+;                   |add_sub_8dc:add_sub_30|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|alt_u_div_2re:divider|add_sub_8dc:add_sub_30     ;              ;
+;                   |add_sub_8dc:add_sub_31|  ; 6 (6)       ; 0            ; 0           ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|alt_u_div_2re:divider|add_sub_8dc:add_sub_31     ;              ;
+;                |lpm_abs_ek9:my_abs_num|     ; 26 (26)     ; 0            ; 0           ; 0    ; 0            ; 26 (26)      ; 0 (0)             ; 0 (0)            ; 25 (25)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Div1|lpm_divide_lko:auto_generated|abs_divider_kbg:divider|lpm_abs_ek9:my_abs_num                           ;              ;
+;       |lpm_divide:Mod0|                     ; 1614 (0)    ; 0            ; 0           ; 0    ; 0            ; 1614 (0)     ; 0 (0)             ; 0 (0)            ; 602 (0)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0                                                                                                        ;              ;
+;          |lpm_divide_h0m:auto_generated|    ; 1614 (0)    ; 0            ; 0           ; 0    ; 0            ; 1614 (0)     ; 0 (0)             ; 0 (0)            ; 602 (0)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated                                                                          ;              ;
+;             |sign_div_unsign_anh:divider|   ; 1614 (0)    ; 0            ; 0           ; 0    ; 0            ; 1614 (0)     ; 0 (0)             ; 0 (0)            ; 602 (0)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider                                              ;              ;
+;                |alt_u_div_4ue:divider|      ; 1614 (1012) ; 0            ; 0           ; 0    ; 0            ; 1614 (1012)  ; 0 (0)             ; 0 (0)            ; 602 (0)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider                        ;              ;
+;                   |add_sub_0fc:add_sub_22|  ; 25 (25)     ; 0            ; 0           ; 0    ; 0            ; 25 (25)      ; 0 (0)             ; 0 (0)            ; 25 (25)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_0fc:add_sub_22 ;              ;
+;                   |add_sub_1fc:add_sub_23|  ; 26 (26)     ; 0            ; 0           ; 0    ; 0            ; 26 (26)      ; 0 (0)             ; 0 (0)            ; 26 (26)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_1fc:add_sub_23 ;              ;
+;                   |add_sub_2fc:add_sub_24|  ; 27 (27)     ; 0            ; 0           ; 0    ; 0            ; 27 (27)      ; 0 (0)             ; 0 (0)            ; 27 (27)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_2fc:add_sub_24 ;              ;
+;                   |add_sub_3fc:add_sub_25|  ; 28 (28)     ; 0            ; 0           ; 0    ; 0            ; 28 (28)      ; 0 (0)             ; 0 (0)            ; 28 (28)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_3fc:add_sub_25 ;              ;
+;                   |add_sub_4fc:add_sub_26|  ; 29 (29)     ; 0            ; 0           ; 0    ; 0            ; 29 (29)      ; 0 (0)             ; 0 (0)            ; 29 (29)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_4fc:add_sub_26 ;              ;
+;                   |add_sub_5fc:add_sub_27|  ; 30 (30)     ; 0            ; 0           ; 0    ; 0            ; 30 (30)      ; 0 (0)             ; 0 (0)            ; 30 (30)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_5fc:add_sub_27 ;              ;
+;                   |add_sub_6fc:add_sub_28|  ; 31 (31)     ; 0            ; 0           ; 0    ; 0            ; 31 (31)      ; 0 (0)             ; 0 (0)            ; 31 (31)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_6fc:add_sub_28 ;              ;
+;                   |add_sub_7fc:add_sub_29|  ; 32 (32)     ; 0            ; 0           ; 0    ; 0            ; 32 (32)      ; 0 (0)             ; 0 (0)            ; 32 (32)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_7fc:add_sub_29 ;              ;
+;                   |add_sub_8dc:add_sub_5|   ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_8dc:add_sub_5  ;              ;
+;                   |add_sub_8fc:add_sub_30|  ; 33 (33)     ; 0            ; 0           ; 0    ; 0            ; 33 (33)      ; 0 (0)             ; 0 (0)            ; 33 (33)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_8fc:add_sub_30 ;              ;
+;                   |add_sub_9dc:add_sub_6|   ; 9 (9)       ; 0            ; 0           ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 0 (0)            ; 9 (9)           ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_9dc:add_sub_6  ;              ;
+;                   |add_sub_9fc:add_sub_31|  ; 34 (34)     ; 0            ; 0           ; 0    ; 0            ; 34 (34)      ; 0 (0)             ; 0 (0)            ; 34 (34)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_9fc:add_sub_31 ;              ;
+;                   |add_sub_adc:add_sub_7|   ; 10 (10)     ; 0            ; 0           ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_adc:add_sub_7  ;              ;
+;                   |add_sub_afc:add_sub_32|  ; 35 (35)     ; 0            ; 0           ; 0    ; 0            ; 35 (35)      ; 0 (0)             ; 0 (0)            ; 35 (35)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_afc:add_sub_32 ;              ;
+;                   |add_sub_bdc:add_sub_8|   ; 11 (11)     ; 0            ; 0           ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 11 (11)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_bdc:add_sub_8  ;              ;
+;                   |add_sub_jec:add_sub_9|   ; 12 (12)     ; 0            ; 0           ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_jec:add_sub_9  ;              ;
+;                   |add_sub_kec:add_sub_10|  ; 13 (13)     ; 0            ; 0           ; 0    ; 0            ; 13 (13)      ; 0 (0)             ; 0 (0)            ; 13 (13)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_kec:add_sub_10 ;              ;
+;                   |add_sub_lec:add_sub_11|  ; 14 (14)     ; 0            ; 0           ; 0    ; 0            ; 14 (14)      ; 0 (0)             ; 0 (0)            ; 14 (14)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_lec:add_sub_11 ;              ;
+;                   |add_sub_mec:add_sub_12|  ; 15 (15)     ; 0            ; 0           ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 0 (0)            ; 15 (15)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_mec:add_sub_12 ;              ;
+;                   |add_sub_nec:add_sub_13|  ; 16 (16)     ; 0            ; 0           ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 0 (0)            ; 16 (16)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_nec:add_sub_13 ;              ;
+;                   |add_sub_oec:add_sub_14|  ; 17 (17)     ; 0            ; 0           ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 0 (0)            ; 17 (17)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_oec:add_sub_14 ;              ;
+;                   |add_sub_pec:add_sub_15|  ; 18 (18)     ; 0            ; 0           ; 0    ; 0            ; 18 (18)      ; 0 (0)             ; 0 (0)            ; 18 (18)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_pec:add_sub_15 ;              ;
+;                   |add_sub_qec:add_sub_16|  ; 19 (19)     ; 0            ; 0           ; 0    ; 0            ; 19 (19)      ; 0 (0)             ; 0 (0)            ; 19 (19)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_qec:add_sub_16 ;              ;
+;                   |add_sub_rec:add_sub_17|  ; 20 (20)     ; 0            ; 0           ; 0    ; 0            ; 20 (20)      ; 0 (0)             ; 0 (0)            ; 20 (20)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_rec:add_sub_17 ;              ;
+;                   |add_sub_sec:add_sub_18|  ; 21 (21)     ; 0            ; 0           ; 0    ; 0            ; 21 (21)      ; 0 (0)             ; 0 (0)            ; 21 (21)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_sec:add_sub_18 ;              ;
+;                   |add_sub_tec:add_sub_19|  ; 22 (22)     ; 0            ; 0           ; 0    ; 0            ; 22 (22)      ; 0 (0)             ; 0 (0)            ; 22 (22)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_tec:add_sub_19 ;              ;
+;                   |add_sub_uec:add_sub_20|  ; 23 (23)     ; 0            ; 0           ; 0    ; 0            ; 23 (23)      ; 0 (0)             ; 0 (0)            ; 23 (23)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_uec:add_sub_20 ;              ;
+;                   |add_sub_vec:add_sub_21|  ; 24 (24)     ; 0            ; 0           ; 0    ; 0            ; 24 (24)      ; 0 (0)             ; 0 (0)            ; 24 (24)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod0|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_vec:add_sub_21 ;              ;
+;       |lpm_divide:Mod1|                     ; 1415 (0)    ; 0            ; 0           ; 0    ; 0            ; 1415 (0)     ; 0 (0)             ; 0 (0)            ; 539 (0)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1                                                                                                        ;              ;
+;          |lpm_divide_h0m:auto_generated|    ; 1415 (0)    ; 0            ; 0           ; 0    ; 0            ; 1415 (0)     ; 0 (0)             ; 0 (0)            ; 539 (0)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated                                                                          ;              ;
+;             |sign_div_unsign_anh:divider|   ; 1415 (0)    ; 0            ; 0           ; 0    ; 0            ; 1415 (0)     ; 0 (0)             ; 0 (0)            ; 539 (0)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider                                              ;              ;
+;                |alt_u_div_4ue:divider|      ; 1415 (876)  ; 0            ; 0           ; 0    ; 0            ; 1415 (876)   ; 0 (0)             ; 0 (0)            ; 539 (0)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider                        ;              ;
+;                   |add_sub_0fc:add_sub_22|  ; 25 (25)     ; 0            ; 0           ; 0    ; 0            ; 25 (25)      ; 0 (0)             ; 0 (0)            ; 25 (25)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_0fc:add_sub_22 ;              ;
+;                   |add_sub_1fc:add_sub_23|  ; 26 (26)     ; 0            ; 0           ; 0    ; 0            ; 26 (26)      ; 0 (0)             ; 0 (0)            ; 26 (26)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_1fc:add_sub_23 ;              ;
+;                   |add_sub_2fc:add_sub_24|  ; 27 (27)     ; 0            ; 0           ; 0    ; 0            ; 27 (27)      ; 0 (0)             ; 0 (0)            ; 27 (27)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_2fc:add_sub_24 ;              ;
+;                   |add_sub_3fc:add_sub_25|  ; 28 (28)     ; 0            ; 0           ; 0    ; 0            ; 28 (28)      ; 0 (0)             ; 0 (0)            ; 28 (28)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_3fc:add_sub_25 ;              ;
+;                   |add_sub_4fc:add_sub_26|  ; 29 (29)     ; 0            ; 0           ; 0    ; 0            ; 29 (29)      ; 0 (0)             ; 0 (0)            ; 29 (29)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_4fc:add_sub_26 ;              ;
+;                   |add_sub_5fc:add_sub_27|  ; 30 (30)     ; 0            ; 0           ; 0    ; 0            ; 30 (30)      ; 0 (0)             ; 0 (0)            ; 30 (30)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_5fc:add_sub_27 ;              ;
+;                   |add_sub_6fc:add_sub_28|  ; 31 (31)     ; 0            ; 0           ; 0    ; 0            ; 31 (31)      ; 0 (0)             ; 0 (0)            ; 31 (31)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_6fc:add_sub_28 ;              ;
+;                   |add_sub_7fc:add_sub_29|  ; 32 (32)     ; 0            ; 0           ; 0    ; 0            ; 32 (32)      ; 0 (0)             ; 0 (0)            ; 32 (32)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_7fc:add_sub_29 ;              ;
+;                   |add_sub_8fc:add_sub_30|  ; 33 (33)     ; 0            ; 0           ; 0    ; 0            ; 33 (33)      ; 0 (0)             ; 0 (0)            ; 33 (33)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_8fc:add_sub_30 ;              ;
+;                   |add_sub_9fc:add_sub_31|  ; 34 (34)     ; 0            ; 0           ; 0    ; 0            ; 34 (34)      ; 0 (0)             ; 0 (0)            ; 34 (34)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_9fc:add_sub_31 ;              ;
+;                   |add_sub_afc:add_sub_32|  ; 35 (35)     ; 0            ; 0           ; 0    ; 0            ; 35 (35)      ; 0 (0)             ; 0 (0)            ; 35 (35)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_afc:add_sub_32 ;              ;
+;                   |add_sub_lec:add_sub_11|  ; 14 (14)     ; 0            ; 0           ; 0    ; 0            ; 14 (14)      ; 0 (0)             ; 0 (0)            ; 14 (14)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_lec:add_sub_11 ;              ;
+;                   |add_sub_mec:add_sub_12|  ; 15 (15)     ; 0            ; 0           ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 0 (0)            ; 15 (15)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_mec:add_sub_12 ;              ;
+;                   |add_sub_nec:add_sub_13|  ; 16 (16)     ; 0            ; 0           ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 0 (0)            ; 16 (16)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_nec:add_sub_13 ;              ;
+;                   |add_sub_oec:add_sub_14|  ; 17 (17)     ; 0            ; 0           ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 0 (0)            ; 17 (17)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_oec:add_sub_14 ;              ;
+;                   |add_sub_pec:add_sub_15|  ; 18 (18)     ; 0            ; 0           ; 0    ; 0            ; 18 (18)      ; 0 (0)             ; 0 (0)            ; 18 (18)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_pec:add_sub_15 ;              ;
+;                   |add_sub_qec:add_sub_16|  ; 19 (19)     ; 0            ; 0           ; 0    ; 0            ; 19 (19)      ; 0 (0)             ; 0 (0)            ; 19 (19)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_qec:add_sub_16 ;              ;
+;                   |add_sub_rec:add_sub_17|  ; 20 (20)     ; 0            ; 0           ; 0    ; 0            ; 20 (20)      ; 0 (0)             ; 0 (0)            ; 20 (20)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_rec:add_sub_17 ;              ;
+;                   |add_sub_sec:add_sub_18|  ; 21 (21)     ; 0            ; 0           ; 0    ; 0            ; 21 (21)      ; 0 (0)             ; 0 (0)            ; 21 (21)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_sec:add_sub_18 ;              ;
+;                   |add_sub_tec:add_sub_19|  ; 22 (22)     ; 0            ; 0           ; 0    ; 0            ; 22 (22)      ; 0 (0)             ; 0 (0)            ; 22 (22)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_tec:add_sub_19 ;              ;
+;                   |add_sub_uec:add_sub_20|  ; 23 (23)     ; 0            ; 0           ; 0    ; 0            ; 23 (23)      ; 0 (0)             ; 0 (0)            ; 23 (23)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_uec:add_sub_20 ;              ;
+;                   |add_sub_vec:add_sub_21|  ; 24 (24)     ; 0            ; 0           ; 0    ; 0            ; 24 (24)      ; 0 (0)             ; 0 (0)            ; 24 (24)         ; 0 (0)      ; |manage|devide:inst3|lpm_divide:Mod1|lpm_divide_h0m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_4ue:divider|add_sub_vec:add_sub_21 ;              ;
+;    |diffdis:inst6|                          ; 27 (27)     ; 0            ; 0           ; 0    ; 0            ; 27 (27)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |manage|diffdis:inst6                                                                                                                       ;              ;
+;    |frediv1:inst10|                         ; 19 (19)     ; 8            ; 0           ; 0    ; 0            ; 11 (11)      ; 4 (4)             ; 4 (4)            ; 7 (7)           ; 0 (0)      ; |manage|frediv1:inst10                                                                                                                      ;              ;
+;    |frediv2:inst9|                          ; 2 (2)       ; 1            ; 0           ; 0    ; 0            ; 1 (1)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |manage|frediv2:inst9                                                                                                                       ;              ;
+;    |numcount:inst1|                         ; 32 (32)     ; 32           ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; 31 (31)         ; 0 (0)      ; |manage|numcount:inst1                                                                                                                      ;              ;
+;    |replaynum:inst2|                        ; 738 (28)    ; 0            ; 0           ; 0    ; 0            ; 738 (28)     ; 0 (0)             ; 0 (0)            ; 358 (28)        ; 0 (0)      ; |manage|replaynum:inst2                                                                                                                     ;              ;
+;       |lpm_divide:Div0|                     ; 710 (0)     ; 0            ; 0           ; 0    ; 0            ; 710 (0)      ; 0 (0)             ; 0 (0)            ; 330 (0)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0                                                                                                     ;              ;
+;          |lpm_divide_2mo:auto_generated|    ; 710 (0)     ; 0            ; 0           ; 0    ; 0            ; 710 (0)      ; 0 (0)             ; 0 (0)            ; 330 (0)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated                                                                       ;              ;
+;             |abs_divider_1dg:divider|       ; 710 (27)    ; 0            ; 0           ; 0    ; 0            ; 710 (27)     ; 0 (0)             ; 0 (0)            ; 330 (0)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider                                               ;              ;
+;                |add_sub_e6f:compl_add_quot| ; 26 (26)     ; 0            ; 0           ; 0    ; 0            ; 26 (26)      ; 0 (0)             ; 0 (0)            ; 26 (26)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|add_sub_e6f:compl_add_quot                    ;              ;
+;                |alt_u_div_ste:divider|      ; 624 (352)   ; 0            ; 0           ; 0    ; 0            ; 624 (352)    ; 0 (0)             ; 0 (0)            ; 272 (0)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider                         ;              ;
+;                   |add_sub_jec:add_sub_9|   ; 11 (11)     ; 0            ; 0           ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 11 (11)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider|add_sub_jec:add_sub_9   ;              ;
+;                   |add_sub_kec:add_sub_10|  ; 11 (11)     ; 0            ; 0           ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 11 (11)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider|add_sub_kec:add_sub_10  ;              ;
+;                   |add_sub_lec:add_sub_11|  ; 12 (12)     ; 0            ; 0           ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider|add_sub_lec:add_sub_11  ;              ;
+;                   |add_sub_lec:add_sub_12|  ; 12 (12)     ; 0            ; 0           ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider|add_sub_lec:add_sub_12  ;              ;
+;                   |add_sub_lec:add_sub_13|  ; 12 (12)     ; 0            ; 0           ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider|add_sub_lec:add_sub_13  ;              ;
+;                   |add_sub_lec:add_sub_14|  ; 12 (12)     ; 0            ; 0           ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider|add_sub_lec:add_sub_14  ;              ;
+;                   |add_sub_lec:add_sub_15|  ; 12 (12)     ; 0            ; 0           ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider|add_sub_lec:add_sub_15  ;              ;
+;                   |add_sub_lec:add_sub_16|  ; 12 (12)     ; 0            ; 0           ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider|add_sub_lec:add_sub_16  ;              ;
+;                   |add_sub_lec:add_sub_17|  ; 12 (12)     ; 0            ; 0           ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider|add_sub_lec:add_sub_17  ;              ;
+;                   |add_sub_lec:add_sub_18|  ; 12 (12)     ; 0            ; 0           ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider|add_sub_lec:add_sub_18  ;              ;
+;                   |add_sub_lec:add_sub_19|  ; 12 (12)     ; 0            ; 0           ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider|add_sub_lec:add_sub_19  ;              ;
+;                   |add_sub_lec:add_sub_20|  ; 12 (12)     ; 0            ; 0           ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider|add_sub_lec:add_sub_20  ;              ;
+;                   |add_sub_lec:add_sub_21|  ; 12 (12)     ; 0            ; 0           ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider|add_sub_lec:add_sub_21  ;              ;
+;                   |add_sub_lec:add_sub_22|  ; 12 (12)     ; 0            ; 0           ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider|add_sub_lec:add_sub_22  ;              ;
+;                   |add_sub_lec:add_sub_23|  ; 12 (12)     ; 0            ; 0           ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider|add_sub_lec:add_sub_23  ;              ;
+;                   |add_sub_lec:add_sub_24|  ; 12 (12)     ; 0            ; 0           ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider|add_sub_lec:add_sub_24  ;              ;
+;                   |add_sub_lec:add_sub_25|  ; 12 (12)     ; 0            ; 0           ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider|add_sub_lec:add_sub_25  ;              ;
+;                   |add_sub_lec:add_sub_26|  ; 12 (12)     ; 0            ; 0           ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider|add_sub_lec:add_sub_26  ;              ;
+;                   |add_sub_lec:add_sub_27|  ; 12 (12)     ; 0            ; 0           ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider|add_sub_lec:add_sub_27  ;              ;
+;                   |add_sub_lec:add_sub_28|  ; 12 (12)     ; 0            ; 0           ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider|add_sub_lec:add_sub_28  ;              ;
+;                   |add_sub_lec:add_sub_29|  ; 12 (12)     ; 0            ; 0           ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider|add_sub_lec:add_sub_29  ;              ;
+;                   |add_sub_lec:add_sub_30|  ; 12 (12)     ; 0            ; 0           ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider|add_sub_lec:add_sub_30  ;              ;
+;                   |add_sub_lec:add_sub_31|  ; 10 (10)     ; 0            ; 0           ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|alt_u_div_ste:divider|add_sub_lec:add_sub_31  ;              ;
+;                |lpm_abs_ek9:my_abs_num|     ; 33 (33)     ; 0            ; 0           ; 0    ; 0            ; 33 (33)      ; 0 (0)             ; 0 (0)            ; 32 (32)         ; 0 (0)      ; |manage|replaynum:inst2|lpm_divide:Div0|lpm_divide_2mo:auto_generated|abs_divider_1dg:divider|lpm_abs_ek9:my_abs_num                        ;              ;
+;    |scan_ledt:inst4|                        ; 11 (0)      ; 3            ; 0           ; 0    ; 0            ; 8 (0)        ; 0 (0)             ; 3 (0)            ; 2 (0)           ; 0 (0)      ; |manage|scan_ledt:inst4                                                                                                                     ;              ;
+;       |7449:inst3|                          ; 7 (7)       ; 0            ; 0           ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |manage|scan_ledt:inst4|7449:inst3                                                                                                          ;              ;
+;       |count4:inst|                         ; 3 (1)       ; 3            ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (1)            ; 2 (0)           ; 0 (0)      ; |manage|scan_ledt:inst4|count4:inst                                                                                                         ;              ;
+;          |74161:inst|                       ; 2 (0)       ; 2            ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (0)            ; 2 (0)           ; 0 (0)      ; |manage|scan_ledt:inst4|count4:inst|74161:inst                                                                                              ;              ;
+;             |f74161:sub|                    ; 2 (2)       ; 2            ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; 2 (2)           ; 0 (0)      ; |manage|scan_ledt:inst4|count4:inst|74161:inst|f74161:sub                                                                                   ;              ;
+;       |decoder2:inst11|                     ; 1 (1)       ; 0            ; 0           ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |manage|scan_ledt:inst4|decoder2:inst11                                                                                                     ;              ;
+;    |selfcount:inst|                         ; 52 (52)     ; 21           ; 0           ; 0    ; 0            ; 31 (31)      ; 10 (10)           ; 11 (11)          ; 19 (19)         ; 0 (0)      ; |manage|selfcount:inst                                                                                                                      ;              ;
+;    |voice2:inst5|                           ; 9 (9)       ; 5            ; 0           ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |manage|voice2:inst5                                                                                                                        ;              ;
+;    |voice3:inst7|                           ; 27 (27)     ; 10           ; 0           ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 10 (10)          ; 9 (9)           ; 0 (0)      ; |manage|voice3:inst7                                                                                                                        ;              ;
++---------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; diffdis:inst6|control[0]                           ; GND                 ; yes                    ;
+; diffdis:inst6|control[1]                           ; GND                 ; yes                    ;
+; diffdis:inst6|control[2]                           ; GND                 ; yes                    ;
+; diffdis:inst6|control[3]                           ; GND                 ; yes                    ;
+; Number of user-specified and inferred latches = 4  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                        ;
++---------------------------------------+-----------------------------------+
+; Register name                         ; Reason for Removal                ;
++---------------------------------------+-----------------------------------+
+; frediv2:inst9|cnt[0]                  ; Merged with frediv1:inst10|cnt[0] ;
+; frediv2:inst9|cnt[1]                  ; Merged with frediv1:inst10|cnt[1] ;
+; frediv2:inst9|cnt[2]                  ; Merged with frediv1:inst10|cnt[2] ;
+; frediv2:inst9|cnt[3]                  ; Merged with frediv1:inst10|cnt[3] ;
+; frediv2:inst9|cnt[4]                  ; Merged with frediv1:inst10|cnt[4] ;
+; frediv2:inst9|cnt[5]                  ; Merged with frediv1:inst10|cnt[5] ;
+; frediv2:inst9|cnt[6]                  ; Merged with frediv1:inst10|cnt[6] ;
+; Total Number of Removed Registers = 7 ;                                   ;
++---------------------------------------+-----------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 80    ;
+; Number of registers using Synchronous Clear  ; 9     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 39    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 33    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; voice2:inst5|zj                        ; 12      ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |manage|voice3:inst7|n[0]          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |manage|frediv2:inst9|clk_out_1KHZ ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |manage|devide:inst3|Add1          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |manage|voice3:inst7|div[7]        ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |manage|diffdis:inst6|control[2]   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scan_ledt:inst4|count4:inst|74161:inst ;
++------------------------+---------+--------------------------------------------------+
+; Parameter Name         ; Value   ; Type                                             ;
++------------------------+---------+--------------------------------------------------+
+; DEVICE_FAMILY          ; Cyclone ; Untyped                                          ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                                     ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                                   ;
++------------------------+---------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: replaynum:inst2|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------------+
+; Parameter Name         ; Value          ; Type                                   ;
++------------------------+----------------+----------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                ;
+; LPM_WIDTHD             ; 11             ; Untyped                                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                ;
+; CBXI_PARAMETER         ; lpm_divide_2mo ; Untyped                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
++------------------------+----------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: devide:inst3|lpm_divide:Div0 ;
++------------------------+----------------+-------------------------------------+
+; Parameter Name         ; Value          ; Type                                ;
++------------------------+----------------+-------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                             ;
+; LPM_WIDTHD             ; 8              ; Untyped                             ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                             ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                             ;
+; LPM_PIPELINE           ; 0              ; Untyped                             ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                             ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                             ;
+; CBXI_PARAMETER         ; lpm_divide_oko ; Untyped                             ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                             ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                             ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                        ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                      ;
++------------------------+----------------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: devide:inst3|lpm_divide:Div1 ;
++------------------------+----------------+-------------------------------------+
+; Parameter Name         ; Value          ; Type                                ;
++------------------------+----------------+-------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                             ;
+; LPM_WIDTHD             ; 5              ; Untyped                             ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                             ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                             ;
+; LPM_PIPELINE           ; 0              ; Untyped                             ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                             ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                             ;
+; CBXI_PARAMETER         ; lpm_divide_lko ; Untyped                             ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                             ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                             ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                        ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                      ;
++------------------------+----------------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: devide:inst3|lpm_divide:Mod0 ;
++------------------------+----------------+-------------------------------------+
+; Parameter Name         ; Value          ; Type                                ;
++------------------------+----------------+-------------------------------------+
+; LPM_WIDTHN             ; 33             ; Untyped                             ;
+; LPM_WIDTHD             ; 32             ; Untyped                             ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                             ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                             ;
+; LPM_PIPELINE           ; 0              ; Untyped                             ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                             ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                             ;
+; CBXI_PARAMETER         ; lpm_divide_h0m ; Untyped                             ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                             ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                             ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                        ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                      ;
++------------------------+----------------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: devide:inst3|lpm_divide:Mod1 ;
++------------------------+----------------+-------------------------------------+
+; Parameter Name         ; Value          ; Type                                ;
++------------------------+----------------+-------------------------------------+
+; LPM_WIDTHN             ; 33             ; Untyped                             ;
+; LPM_WIDTHD             ; 32             ; Untyped                             ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                             ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                             ;
+; LPM_PIPELINE           ; 0              ; Untyped                             ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                             ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                             ;
+; CBXI_PARAMETER         ; lpm_divide_h0m ; Untyped                             ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                             ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                             ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                        ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                      ;
++------------------------+----------------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:09     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+    Info: Processing started: Mon May 28 16:47:31 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off manage -c manage
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file h:/altera/13.0/count4/count4.bdf
+    Info (12023): Found entity 1: count4
+Info (12021): Found 2 design units, including 1 entities, in source file h:/altera/13.0/mux4_3_1/mux4_3_1.vhd
+    Info (12022): Found design unit 1: mux4_3_1-rtl
+    Info (12023): Found entity 1: mux4_3_1
+Info (12021): Found 2 design units, including 1 entities, in source file h:/altera/13.0/decoder2/decoder2.vhd
+    Info (12022): Found design unit 1: decoder2-rtl
+    Info (12023): Found entity 1: decoder2
+Info (12021): Found 1 design units, including 1 entities, in source file manage.bdf
+    Info (12023): Found entity 1: manage
+Info (12127): Elaborating entity "manage" for the top level hierarchy
+Warning (12125): Using design file selfcount.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: selfcount-fun1
+    Info (12023): Found entity 1: selfcount
+Info (12128): Elaborating entity "selfcount" for hierarchy "selfcount:inst"
+Warning (12125): Using design file scan_ledt.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: scan_ledt
+Info (12128): Elaborating entity "scan_ledt" for hierarchy "scan_ledt:inst4"
+Info (12128): Elaborating entity "7449" for hierarchy "scan_ledt:inst4|7449:inst3"
+Info (12130): Elaborated megafunction instantiation "scan_ledt:inst4|7449:inst3"
+Info (12128): Elaborating entity "mux4_3_1" for hierarchy "scan_ledt:inst4|mux4_3_1:inst1"
+Warning (10492): VHDL Process Statement warning at mux4_3_1.vhd(14): signal "d0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux4_3_1.vhd(15): signal "d1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux4_3_1.vhd(16): signal "d2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux4_3_1.vhd(17): signal "d2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "count4" for hierarchy "scan_ledt:inst4|count4:inst"
+Info (12128): Elaborating entity "74161" for hierarchy "scan_ledt:inst4|count4:inst|74161:inst"
+Info (12130): Elaborated megafunction instantiation "scan_ledt:inst4|count4:inst|74161:inst"
+Info (12128): Elaborating entity "f74161" for hierarchy "scan_ledt:inst4|count4:inst|74161:inst|f74161:sub"
+Info (12131): Elaborated megafunction instantiation "scan_ledt:inst4|count4:inst|74161:inst|f74161:sub", which is child of megafunction instantiation "scan_ledt:inst4|count4:inst|74161:inst"
+Info (12128): Elaborating entity "decoder2" for hierarchy "scan_ledt:inst4|decoder2:inst11"
+Warning (12125): Using design file frediv1.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: frediv1-behaviorial
+    Info (12023): Found entity 1: frediv1
+Info (12128): Elaborating entity "frediv1" for hierarchy "frediv1:inst10"
+Warning (12125): Using design file devide.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: devide-behave
+    Info (12023): Found entity 1: devide
+Info (12128): Elaborating entity "devide" for hierarchy "devide:inst3"
+Warning (12125): Using design file replaynum.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: replaynum-fun1
+    Info (12023): Found entity 1: replaynum
+Info (12128): Elaborating entity "replaynum" for hierarchy "replaynum:inst2"
+Warning (10492): VHDL Process Statement warning at replaynum.vhd(17): signal "change" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (12125): Using design file numcount.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: numcount-fun1
+    Info (12023): Found entity 1: numcount
+Info (12128): Elaborating entity "numcount" for hierarchy "numcount:inst1"
+Warning (12125): Using design file voice3.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: voice3-fun1
+    Info (12023): Found entity 1: voice3
+Info (12128): Elaborating entity "voice3" for hierarchy "voice3:inst7"
+Warning (10492): VHDL Process Statement warning at voice3.vhd(17): signal "control" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at voice3.vhd(18): signal "control" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at voice3.vhd(19): signal "control" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at voice3.vhd(20): signal "control" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (12125): Using design file voice2.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: voice2-fun1
+    Info (12023): Found entity 1: voice2
+Info (12128): Elaborating entity "voice2" for hierarchy "voice2:inst5"
+Warning (10492): VHDL Process Statement warning at voice2.vhd(18): signal "control" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at voice2.vhd(19): signal "control" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at voice2.vhd(20): signal "control" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at voice2.vhd(21): signal "control" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at voice2.vhd(31): signal "n" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (12125): Using design file frediv2.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: frediv2-behaviorial
+    Info (12023): Found entity 1: frediv2
+Info (12128): Elaborating entity "frediv2" for hierarchy "frediv2:inst9"
+Warning (12125): Using design file diffdis.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: diffdis-fun1
+    Info (12023): Found entity 1: diffdis
+Info (12128): Elaborating entity "diffdis" for hierarchy "diffdis:inst6"
+Warning (10631): VHDL Process Statement warning at diffdis.vhd(12): inferring latch(es) for signal or variable "control", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "control[0]" at diffdis.vhd(12)
+Info (10041): Inferred latch for "control[1]" at diffdis.vhd(12)
+Info (10041): Inferred latch for "control[2]" at diffdis.vhd(12)
+Info (10041): Inferred latch for "control[3]" at diffdis.vhd(12)
+Warning (12125): Using design file replaycount.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: replaycount-behave
+    Info (12023): Found entity 1: replaycount
+Info (12128): Elaborating entity "replaycount" for hierarchy "replaycount:inst11"
+Info (278001): Inferred 5 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "replaynum:inst2|Div0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "devide:inst3|Div0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "devide:inst3|Div1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "devide:inst3|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "devide:inst3|Mod1"
+Info (12130): Elaborated megafunction instantiation "replaynum:inst2|lpm_divide:Div0"
+Info (12133): Instantiated megafunction "replaynum:inst2|lpm_divide:Div0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "11"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_2mo.tdf
+    Info (12023): Found entity 1: lpm_divide_2mo
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_1dg.tdf
+    Info (12023): Found entity 1: abs_divider_1dg
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ste.tdf
+    Info (12023): Found entity 1: alt_u_div_ste
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_3dc.tdf
+    Info (12023): Found entity 1: add_sub_3dc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_4dc.tdf
+    Info (12023): Found entity 1: add_sub_4dc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_kec.tdf
+    Info (12023): Found entity 1: add_sub_kec
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_lec.tdf
+    Info (12023): Found entity 1: add_sub_lec
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_5dc.tdf
+    Info (12023): Found entity 1: add_sub_5dc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_6dc.tdf
+    Info (12023): Found entity 1: add_sub_6dc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7dc.tdf
+    Info (12023): Found entity 1: add_sub_7dc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8dc.tdf
+    Info (12023): Found entity 1: add_sub_8dc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_9dc.tdf
+    Info (12023): Found entity 1: add_sub_9dc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_adc.tdf
+    Info (12023): Found entity 1: add_sub_adc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_bdc.tdf
+    Info (12023): Found entity 1: add_sub_bdc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_jec.tdf
+    Info (12023): Found entity 1: add_sub_jec
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_bk9.tdf
+    Info (12023): Found entity 1: lpm_abs_bk9
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_ek9.tdf
+    Info (12023): Found entity 1: lpm_abs_ek9
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_e6f.tdf
+    Info (12023): Found entity 1: add_sub_e6f
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_b6f.tdf
+    Info (12023): Found entity 1: add_sub_b6f
+Info (12130): Elaborated megafunction instantiation "devide:inst3|lpm_divide:Div0"
+Info (12133): Instantiated megafunction "devide:inst3|lpm_divide:Div0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_oko.tdf
+    Info (12023): Found entity 1: lpm_divide_oko
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_nbg.tdf
+    Info (12023): Found entity 1: abs_divider_nbg
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_8re.tdf
+    Info (12023): Found entity 1: alt_u_div_8re
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_1j9.tdf
+    Info (12023): Found entity 1: lpm_abs_1j9
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_15f.tdf
+    Info (12023): Found entity 1: add_sub_15f
+Info (12130): Elaborated megafunction instantiation "devide:inst3|lpm_divide:Div1"
+Info (12133): Instantiated megafunction "devide:inst3|lpm_divide:Div1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_lko.tdf
+    Info (12023): Found entity 1: lpm_divide_lko
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_kbg.tdf
+    Info (12023): Found entity 1: abs_divider_kbg
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_2re.tdf
+    Info (12023): Found entity 1: alt_u_div_2re
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_ui9.tdf
+    Info (12023): Found entity 1: lpm_abs_ui9
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u4f.tdf
+    Info (12023): Found entity 1: add_sub_u4f
+Info (12130): Elaborated megafunction instantiation "devide:inst3|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "devide:inst3|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "33"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_h0m.tdf
+    Info (12023): Found entity 1: lpm_divide_h0m
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_anh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_anh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_4ue.tdf
+    Info (12023): Found entity 1: alt_u_div_4ue
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_mec.tdf
+    Info (12023): Found entity 1: add_sub_mec
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_nec.tdf
+    Info (12023): Found entity 1: add_sub_nec
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_oec.tdf
+    Info (12023): Found entity 1: add_sub_oec
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_pec.tdf
+    Info (12023): Found entity 1: add_sub_pec
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_qec.tdf
+    Info (12023): Found entity 1: add_sub_qec
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_rec.tdf
+    Info (12023): Found entity 1: add_sub_rec
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_sec.tdf
+    Info (12023): Found entity 1: add_sub_sec
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_tec.tdf
+    Info (12023): Found entity 1: add_sub_tec
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_uec.tdf
+    Info (12023): Found entity 1: add_sub_uec
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_vec.tdf
+    Info (12023): Found entity 1: add_sub_vec
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_0fc.tdf
+    Info (12023): Found entity 1: add_sub_0fc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_1fc.tdf
+    Info (12023): Found entity 1: add_sub_1fc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_2fc.tdf
+    Info (12023): Found entity 1: add_sub_2fc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_3fc.tdf
+    Info (12023): Found entity 1: add_sub_3fc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_4fc.tdf
+    Info (12023): Found entity 1: add_sub_4fc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_5fc.tdf
+    Info (12023): Found entity 1: add_sub_5fc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_6fc.tdf
+    Info (12023): Found entity 1: add_sub_6fc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7fc.tdf
+    Info (12023): Found entity 1: add_sub_7fc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8fc.tdf
+    Info (12023): Found entity 1: add_sub_8fc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_9fc.tdf
+    Info (12023): Found entity 1: add_sub_9fc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_afc.tdf
+    Info (12023): Found entity 1: add_sub_afc
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "bsg[2]" is stuck at GND
+Info (18000): Registers with preset signals will power-up high
+Info (18008): Converted 1 single input CARRY primitives to CARRY_SUM primitives
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 4904 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 12 output pins
+    Info (21061): Implemented 4890 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 28 warnings
+    Info: Peak virtual memory: 574 megabytes
+    Info: Processing ended: Mon May 28 16:47:44 2018
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:12
+
+

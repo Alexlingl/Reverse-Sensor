@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clk'
+Slack : -3.893
+TNS   : -185.464
+
+Type  : Setup 'voice2:inst5|zj'
+Slack : -3.797
+TNS   : -37.158
+
+Type  : Setup 'frediv1:inst10|clk_out_1KHZ'
+Slack : -0.978
+TNS   : -1.945
+
+Type  : Setup 'frediv2:inst9|clk_out_1KHZ'
+Slack : -0.768
+TNS   : -3.018
+
+Type  : Hold 'frediv2:inst9|clk_out_1KHZ'
+Slack : -2.979
+TNS   : -2.979
+
+Type  : Hold 'clk'
+Slack : 1.045
+TNS   : 0.000
+
+Type  : Hold 'frediv1:inst10|clk_out_1KHZ'
+Slack : 1.240
+TNS   : 0.000
+
+Type  : Hold 'voice2:inst5|zj'
+Slack : 1.321
+TNS   : 0.000
+
+Type  : Recovery 'frediv2:inst9|clk_out_1KHZ'
+Slack : -5.036
+TNS   : -25.180
+
+Type  : Recovery 'clk'
+Slack : -3.953
+TNS   : -126.496
+
+Type  : Recovery 'frediv1:inst10|clk_out_1KHZ'
+Slack : -3.951
+TNS   : -7.902
+
+Type  : Removal 'frediv1:inst10|clk_out_1KHZ'
+Slack : 4.899
+TNS   : 0.000
+
+Type  : Removal 'clk'
+Slack : 4.901
+TNS   : 0.000
+
+Type  : Removal 'frediv2:inst9|clk_out_1KHZ'
+Slack : 5.558
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -1.583
+TNS   : -165.015
+
+Type  : Minimum Pulse Width 'voice2:inst5|zj'
+Slack : -1.318
+TNS   : -26.360
+
+Type  : Minimum Pulse Width 'frediv2:inst9|clk_out_1KHZ'
+Slack : -1.318
+TNS   : -13.180
+
+Type  : Minimum Pulse Width 'frediv1:inst10|clk_out_1KHZ'
+Slack : -1.318
+TNS   : -7.908
+
+------------------------------------------------------------

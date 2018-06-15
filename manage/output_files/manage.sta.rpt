@@ -1,0 +1,1253 @@
+TimeQuest Timing Analyzer report for manage
+Mon May 28 16:48:13 2018
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Setup: 'voice2:inst5|zj'
+ 13. Setup: 'frediv1:inst10|clk_out_1KHZ'
+ 14. Setup: 'frediv2:inst9|clk_out_1KHZ'
+ 15. Hold: 'frediv2:inst9|clk_out_1KHZ'
+ 16. Hold: 'clk'
+ 17. Hold: 'frediv1:inst10|clk_out_1KHZ'
+ 18. Hold: 'voice2:inst5|zj'
+ 19. Recovery: 'frediv2:inst9|clk_out_1KHZ'
+ 20. Recovery: 'clk'
+ 21. Recovery: 'frediv1:inst10|clk_out_1KHZ'
+ 22. Removal: 'frediv1:inst10|clk_out_1KHZ'
+ 23. Removal: 'clk'
+ 24. Removal: 'frediv2:inst9|clk_out_1KHZ'
+ 25. Minimum Pulse Width: 'clk'
+ 26. Minimum Pulse Width: 'voice2:inst5|zj'
+ 27. Minimum Pulse Width: 'frediv2:inst9|clk_out_1KHZ'
+ 28. Minimum Pulse Width: 'frediv1:inst10|clk_out_1KHZ'
+ 29. Setup Times
+ 30. Hold Times
+ 31. Clock to Output Times
+ 32. Minimum Clock to Output Times
+ 33. Setup Transfers
+ 34. Hold Transfers
+ 35. Recovery Transfers
+ 36. Removal Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                        ;
++--------------------+-----------------------------------------------------+
+; Quartus II Version ; Version 13.0.0 Build 156 04/24/2013 SJ Full Version ;
+; Revision Name      ; manage                                              ;
+; Device Family      ; Cyclone                                             ;
+; Device Name        ; EP1C6Q240C8                                         ;
+; Timing Models      ; Final                                               ;
+; Delay Model        ; Slow Model                                          ;
+; Rise/Fall Delays   ; Unavailable                                         ;
++--------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                   ;
++-----------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------+
+; Clock Name                  ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                         ;
++-----------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------+
+; clk                         ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                         ;
+; frediv1:inst10|clk_out_1KHZ ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { frediv1:inst10|clk_out_1KHZ } ;
+; frediv2:inst9|clk_out_1KHZ  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { frediv2:inst9|clk_out_1KHZ }  ;
+; voice2:inst5|zj             ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { voice2:inst5|zj }             ;
++-----------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Fmax Summary                                                                                                       ;
++------------+-----------------+-----------------------------+-------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                  ; Note                                                  ;
++------------+-----------------+-----------------------------+-------------------------------------------------------+
+; 204.37 MHz ; 204.37 MHz      ; clk                         ;                                                       ;
+; 208.46 MHz ; 208.46 MHz      ; voice2:inst5|zj             ;                                                       ;
+; 505.56 MHz ; 275.03 MHz      ; frediv1:inst10|clk_out_1KHZ ; limit due to high minimum pulse width violation (tch) ;
+; 565.61 MHz ; 275.03 MHz      ; frediv2:inst9|clk_out_1KHZ  ; limit due to high minimum pulse width violation (tch) ;
++------------+-----------------+-----------------------------+-------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------------------------+
+; Setup Summary                                        ;
++-----------------------------+--------+---------------+
+; Clock                       ; Slack  ; End Point TNS ;
++-----------------------------+--------+---------------+
+; clk                         ; -3.893 ; -185.464      ;
+; voice2:inst5|zj             ; -3.797 ; -37.158       ;
+; frediv1:inst10|clk_out_1KHZ ; -0.978 ; -1.945        ;
+; frediv2:inst9|clk_out_1KHZ  ; -0.768 ; -3.018        ;
++-----------------------------+--------+---------------+
+
+
++------------------------------------------------------+
+; Hold Summary                                         ;
++-----------------------------+--------+---------------+
+; Clock                       ; Slack  ; End Point TNS ;
++-----------------------------+--------+---------------+
+; frediv2:inst9|clk_out_1KHZ  ; -2.979 ; -2.979        ;
+; clk                         ; 1.045  ; 0.000         ;
+; frediv1:inst10|clk_out_1KHZ ; 1.240  ; 0.000         ;
+; voice2:inst5|zj             ; 1.321  ; 0.000         ;
++-----------------------------+--------+---------------+
+
+
++------------------------------------------------------+
+; Recovery Summary                                     ;
++-----------------------------+--------+---------------+
+; Clock                       ; Slack  ; End Point TNS ;
++-----------------------------+--------+---------------+
+; frediv2:inst9|clk_out_1KHZ  ; -5.036 ; -25.180       ;
+; clk                         ; -3.953 ; -126.496      ;
+; frediv1:inst10|clk_out_1KHZ ; -3.951 ; -7.902        ;
++-----------------------------+--------+---------------+
+
+
++-----------------------------------------------------+
+; Removal Summary                                     ;
++-----------------------------+-------+---------------+
+; Clock                       ; Slack ; End Point TNS ;
++-----------------------------+-------+---------------+
+; frediv1:inst10|clk_out_1KHZ ; 4.899 ; 0.000         ;
+; clk                         ; 4.901 ; 0.000         ;
+; frediv2:inst9|clk_out_1KHZ  ; 5.558 ; 0.000         ;
++-----------------------------+-------+---------------+
+
+
++------------------------------------------------------+
+; Minimum Pulse Width Summary                          ;
++-----------------------------+--------+---------------+
+; Clock                       ; Slack  ; End Point TNS ;
++-----------------------------+--------+---------------+
+; clk                         ; -1.583 ; -165.015      ;
+; voice2:inst5|zj             ; -1.318 ; -26.360       ;
+; frediv2:inst9|clk_out_1KHZ  ; -1.318 ; -13.180       ;
+; frediv1:inst10|clk_out_1KHZ ; -1.318 ; -7.908        ;
++-----------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                        ;
++--------+-------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node               ; To Node                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
+; -3.893 ; selfcount:inst|tmp[14]  ; selfcount:inst|tmp[10]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.856      ;
+; -3.756 ; selfcount:inst|tmp[11]  ; selfcount:inst|tmp[10]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.719      ;
+; -3.750 ; selfcount:inst|tmp[14]  ; selfcount:inst|tmp[18]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.713      ;
+; -3.748 ; selfcount:inst|tmp[14]  ; selfcount:inst|tmp[16]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.711      ;
+; -3.747 ; selfcount:inst|tmp[14]  ; selfcount:inst|tmp[14]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.710      ;
+; -3.746 ; selfcount:inst|tmp[10]  ; selfcount:inst|tmp[10]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.709      ;
+; -3.741 ; selfcount:inst|tmp[7]   ; selfcount:inst|tmp[9]      ; clk          ; clk         ; 1.000        ; 0.023      ; 4.727      ;
+; -3.736 ; selfcount:inst|tmp[3]   ; selfcount:inst|tmp[9]      ; clk          ; clk         ; 1.000        ; 0.000      ; 4.699      ;
+; -3.731 ; selfcount:inst|tmp[16]  ; selfcount:inst|tmp[10]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.694      ;
+; -3.696 ; selfcount:inst|tmp[14]  ; selfcount:inst|tmp[12]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.659      ;
+; -3.685 ; selfcount:inst|tmp[6]   ; selfcount:inst|tmp[9]      ; clk          ; clk         ; 1.000        ; 0.023      ; 4.671      ;
+; -3.682 ; selfcount:inst|tmp[0]   ; selfcount:inst|tmp[10]     ; clk          ; clk         ; 1.000        ; -0.023     ; 4.622      ;
+; -3.671 ; selfcount:inst|tmp[12]  ; selfcount:inst|tmp[10]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.634      ;
+; -3.639 ; numcount:inst1|count[0] ; numcount:inst1|count[31]   ; clk          ; clk         ; 1.000        ; 0.000      ; 4.602      ;
+; -3.631 ; selfcount:inst|tmp[7]   ; selfcount:inst|tmp[12]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.594      ;
+; -3.626 ; selfcount:inst|tmp[3]   ; selfcount:inst|tmp[12]     ; clk          ; clk         ; 1.000        ; -0.023     ; 4.566      ;
+; -3.620 ; selfcount:inst|tmp[18]  ; selfcount:inst|tmp[10]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.583      ;
+; -3.613 ; selfcount:inst|tmp[11]  ; selfcount:inst|tmp[18]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.576      ;
+; -3.611 ; selfcount:inst|tmp[11]  ; selfcount:inst|tmp[16]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.574      ;
+; -3.610 ; selfcount:inst|tmp[11]  ; selfcount:inst|tmp[14]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.573      ;
+; -3.603 ; selfcount:inst|tmp[10]  ; selfcount:inst|tmp[18]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.566      ;
+; -3.601 ; selfcount:inst|tmp[10]  ; selfcount:inst|tmp[16]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.564      ;
+; -3.600 ; selfcount:inst|tmp[10]  ; selfcount:inst|tmp[14]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.563      ;
+; -3.595 ; selfcount:inst|tmp[13]  ; selfcount:inst|tmp[10]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.558      ;
+; -3.588 ; selfcount:inst|tmp[16]  ; selfcount:inst|tmp[18]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.551      ;
+; -3.586 ; selfcount:inst|tmp[16]  ; selfcount:inst|tmp[16]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.549      ;
+; -3.585 ; selfcount:inst|tmp[16]  ; selfcount:inst|tmp[14]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.548      ;
+; -3.575 ; selfcount:inst|tmp[6]   ; selfcount:inst|tmp[12]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.538      ;
+; -3.562 ; numcount:inst1|count[0] ; numcount:inst1|count[27]   ; clk          ; clk         ; 1.000        ; 0.000      ; 4.525      ;
+; -3.562 ; numcount:inst1|count[0] ; numcount:inst1|count[26]   ; clk          ; clk         ; 1.000        ; 0.000      ; 4.525      ;
+; -3.562 ; numcount:inst1|count[0] ; numcount:inst1|count[30]   ; clk          ; clk         ; 1.000        ; 0.000      ; 4.525      ;
+; -3.562 ; numcount:inst1|count[0] ; numcount:inst1|count[29]   ; clk          ; clk         ; 1.000        ; 0.000      ; 4.525      ;
+; -3.562 ; numcount:inst1|count[0] ; numcount:inst1|count[28]   ; clk          ; clk         ; 1.000        ; 0.000      ; 4.525      ;
+; -3.559 ; selfcount:inst|tmp[11]  ; selfcount:inst|tmp[12]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.522      ;
+; -3.549 ; selfcount:inst|tmp[10]  ; selfcount:inst|tmp[12]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.512      ;
+; -3.539 ; selfcount:inst|tmp[0]   ; selfcount:inst|tmp[18]     ; clk          ; clk         ; 1.000        ; -0.023     ; 4.479      ;
+; -3.537 ; selfcount:inst|tmp[0]   ; selfcount:inst|tmp[16]     ; clk          ; clk         ; 1.000        ; -0.023     ; 4.477      ;
+; -3.536 ; selfcount:inst|tmp[0]   ; selfcount:inst|tmp[14]     ; clk          ; clk         ; 1.000        ; -0.023     ; 4.476      ;
+; -3.534 ; selfcount:inst|tmp[16]  ; selfcount:inst|tmp[12]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.497      ;
+; -3.528 ; selfcount:inst|tmp[12]  ; selfcount:inst|tmp[18]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.491      ;
+; -3.526 ; selfcount:inst|tmp[12]  ; selfcount:inst|tmp[16]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.489      ;
+; -3.525 ; selfcount:inst|tmp[12]  ; selfcount:inst|tmp[14]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.488      ;
+; -3.521 ; selfcount:inst|tmp[2]   ; selfcount:inst|tmp[10]     ; clk          ; clk         ; 1.000        ; -0.023     ; 4.461      ;
+; -3.492 ; selfcount:inst|tmp[9]   ; selfcount:inst|tmp[12]     ; clk          ; clk         ; 1.000        ; -0.023     ; 4.432      ;
+; -3.488 ; selfcount:inst|tmp[4]   ; selfcount:inst|tmp[9]      ; clk          ; clk         ; 1.000        ; 0.000      ; 4.451      ;
+; -3.485 ; selfcount:inst|tmp[0]   ; selfcount:inst|tmp[12]     ; clk          ; clk         ; 1.000        ; -0.023     ; 4.425      ;
+; -3.477 ; selfcount:inst|tmp[18]  ; selfcount:inst|tmp[18]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.440      ;
+; -3.475 ; selfcount:inst|tmp[18]  ; selfcount:inst|tmp[16]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.438      ;
+; -3.474 ; selfcount:inst|tmp[18]  ; selfcount:inst|tmp[14]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.437      ;
+; -3.474 ; selfcount:inst|tmp[12]  ; selfcount:inst|tmp[12]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.437      ;
+; -3.452 ; selfcount:inst|tmp[13]  ; selfcount:inst|tmp[18]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.415      ;
+; -3.450 ; selfcount:inst|tmp[13]  ; selfcount:inst|tmp[16]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.413      ;
+; -3.449 ; selfcount:inst|tmp[13]  ; selfcount:inst|tmp[14]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.412      ;
+; -3.435 ; selfcount:inst|tmp[9]   ; selfcount:inst|tmp[18]     ; clk          ; clk         ; 1.000        ; -0.023     ; 4.375      ;
+; -3.423 ; selfcount:inst|tmp[18]  ; selfcount:inst|tmp[12]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.386      ;
+; -3.419 ; selfcount:inst|tmp[3]   ; selfcount:inst|tmp[7]      ; clk          ; clk         ; 1.000        ; -0.023     ; 4.359      ;
+; -3.398 ; selfcount:inst|tmp[13]  ; selfcount:inst|tmp[12]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.361      ;
+; -3.398 ; selfcount:inst|tmp[7]   ; selfcount:inst|tmp[18]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.361      ;
+; -3.397 ; selfcount:inst|tmp[0]   ; selfcount:inst|tmp[9]      ; clk          ; clk         ; 1.000        ; 0.000      ; 4.360      ;
+; -3.393 ; selfcount:inst|tmp[9]   ; selfcount:inst|tmp[15]     ; clk          ; clk         ; 1.000        ; -0.023     ; 4.333      ;
+; -3.393 ; selfcount:inst|tmp[3]   ; selfcount:inst|tmp[18]     ; clk          ; clk         ; 1.000        ; -0.023     ; 4.333      ;
+; -3.378 ; selfcount:inst|tmp[4]   ; selfcount:inst|tmp[12]     ; clk          ; clk         ; 1.000        ; -0.023     ; 4.318      ;
+; -3.378 ; selfcount:inst|tmp[2]   ; selfcount:inst|tmp[18]     ; clk          ; clk         ; 1.000        ; -0.023     ; 4.318      ;
+; -3.376 ; selfcount:inst|tmp[2]   ; selfcount:inst|tmp[16]     ; clk          ; clk         ; 1.000        ; -0.023     ; 4.316      ;
+; -3.375 ; selfcount:inst|tmp[2]   ; selfcount:inst|tmp[14]     ; clk          ; clk         ; 1.000        ; -0.023     ; 4.315      ;
+; -3.369 ; frediv1:inst10|cnt[6]   ; frediv2:inst9|clk_out_1KHZ ; clk          ; clk         ; 1.000        ; 0.000      ; 4.332      ;
+; -3.367 ; selfcount:inst|tmp[9]   ; selfcount:inst|tmp[14]     ; clk          ; clk         ; 1.000        ; -0.023     ; 4.307      ;
+; -3.356 ; selfcount:inst|tmp[7]   ; selfcount:inst|tmp[15]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.319      ;
+; -3.351 ; selfcount:inst|tmp[9]   ; selfcount:inst|tmp[16]     ; clk          ; clk         ; 1.000        ; -0.023     ; 4.291      ;
+; -3.351 ; selfcount:inst|tmp[3]   ; selfcount:inst|tmp[15]     ; clk          ; clk         ; 1.000        ; -0.023     ; 4.291      ;
+; -3.342 ; selfcount:inst|tmp[6]   ; selfcount:inst|tmp[18]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.305      ;
+; -3.330 ; selfcount:inst|tmp[7]   ; selfcount:inst|tmp[14]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.293      ;
+; -3.325 ; selfcount:inst|tmp[3]   ; selfcount:inst|tmp[14]     ; clk          ; clk         ; 1.000        ; -0.023     ; 4.265      ;
+; -3.324 ; selfcount:inst|tmp[2]   ; selfcount:inst|tmp[12]     ; clk          ; clk         ; 1.000        ; -0.023     ; 4.264      ;
+; -3.314 ; selfcount:inst|tmp[7]   ; selfcount:inst|tmp[16]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.277      ;
+; -3.309 ; selfcount:inst|tmp[3]   ; selfcount:inst|tmp[16]     ; clk          ; clk         ; 1.000        ; -0.023     ; 4.249      ;
+; -3.308 ; selfcount:inst|tmp[14]  ; selfcount:inst|tmp[0]      ; clk          ; clk         ; 1.000        ; 0.023      ; 4.294      ;
+; -3.307 ; selfcount:inst|tmp[14]  ; selfcount:inst|tmp[4]      ; clk          ; clk         ; 1.000        ; 0.023      ; 4.293      ;
+; -3.306 ; selfcount:inst|tmp[14]  ; selfcount:inst|tmp[5]      ; clk          ; clk         ; 1.000        ; 0.023      ; 4.292      ;
+; -3.300 ; selfcount:inst|tmp[14]  ; selfcount:inst|tmp[9]      ; clk          ; clk         ; 1.000        ; 0.023      ; 4.286      ;
+; -3.300 ; selfcount:inst|tmp[1]   ; selfcount:inst|tmp[9]      ; clk          ; clk         ; 1.000        ; 0.000      ; 4.263      ;
+; -3.300 ; selfcount:inst|tmp[6]   ; selfcount:inst|tmp[15]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.263      ;
+; -3.296 ; selfcount:inst|tmp[14]  ; selfcount:inst|trig        ; clk          ; clk         ; 1.000        ; 0.023      ; 4.282      ;
+; -3.295 ; numcount:inst1|count[0] ; numcount:inst1|count[25]   ; clk          ; clk         ; 1.000        ; 0.000      ; 4.258      ;
+; -3.295 ; numcount:inst1|count[0] ; numcount:inst1|count[24]   ; clk          ; clk         ; 1.000        ; 0.000      ; 4.258      ;
+; -3.295 ; numcount:inst1|count[0] ; numcount:inst1|count[23]   ; clk          ; clk         ; 1.000        ; 0.000      ; 4.258      ;
+; -3.295 ; numcount:inst1|count[0] ; numcount:inst1|count[22]   ; clk          ; clk         ; 1.000        ; 0.000      ; 4.258      ;
+; -3.295 ; numcount:inst1|count[0] ; numcount:inst1|count[21]   ; clk          ; clk         ; 1.000        ; 0.000      ; 4.258      ;
+; -3.295 ; selfcount:inst|tmp[14]  ; selfcount:inst|tmp[8]      ; clk          ; clk         ; 1.000        ; 0.023      ; 4.281      ;
+; -3.294 ; selfcount:inst|tmp[17]  ; selfcount:inst|tmp[10]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.257      ;
+; -3.281 ; selfcount:inst|tmp[5]   ; selfcount:inst|tmp[10]     ; clk          ; clk         ; 1.000        ; -0.023     ; 4.221      ;
+; -3.281 ; selfcount:inst|tmp[7]   ; selfcount:inst|tmp[10]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.244      ;
+; -3.274 ; selfcount:inst|tmp[6]   ; selfcount:inst|tmp[14]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.237      ;
+; -3.258 ; selfcount:inst|tmp[6]   ; selfcount:inst|tmp[16]     ; clk          ; clk         ; 1.000        ; 0.000      ; 4.221      ;
+; -3.249 ; selfcount:inst|tmp[8]   ; selfcount:inst|tmp[9]      ; clk          ; clk         ; 1.000        ; 0.000      ; 4.212      ;
+; -3.239 ; frediv1:inst10|cnt[2]   ; frediv2:inst9|clk_out_1KHZ ; clk          ; clk         ; 1.000        ; 0.000      ; 4.202      ;
+; -3.234 ; selfcount:inst|tmp[5]   ; selfcount:inst|tmp[9]      ; clk          ; clk         ; 1.000        ; 0.000      ; 4.197      ;
+; -3.229 ; selfcount:inst|tmp[4]   ; selfcount:inst|tmp[10]     ; clk          ; clk         ; 1.000        ; -0.023     ; 4.169      ;
+; -3.223 ; selfcount:inst|tmp[6]   ; selfcount:inst|tmp[7]      ; clk          ; clk         ; 1.000        ; 0.000      ; 4.186      ;
+; -3.218 ; numcount:inst1|count[0] ; numcount:inst1|count[18]   ; clk          ; clk         ; 1.000        ; 0.000      ; 4.181      ;
++--------+-------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'voice2:inst5|zj'                                                                                                    ;
++--------+-------------------+-------------------+-----------------+-----------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock    ; Latch Clock     ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+-----------------+-----------------+--------------+------------+------------+
+; -3.797 ; voice3:inst7|n[2] ; voice3:inst7|n[0] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.760      ;
+; -3.797 ; voice3:inst7|n[2] ; voice3:inst7|n[6] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.760      ;
+; -3.797 ; voice3:inst7|n[2] ; voice3:inst7|n[5] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.760      ;
+; -3.797 ; voice3:inst7|n[2] ; voice3:inst7|n[4] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.760      ;
+; -3.797 ; voice3:inst7|n[2] ; voice3:inst7|n[3] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.760      ;
+; -3.797 ; voice3:inst7|n[2] ; voice3:inst7|n[2] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.760      ;
+; -3.797 ; voice3:inst7|n[2] ; voice3:inst7|n[1] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.760      ;
+; -3.797 ; voice3:inst7|n[2] ; voice3:inst7|n[8] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.760      ;
+; -3.797 ; voice3:inst7|n[2] ; voice3:inst7|n[7] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.760      ;
+; -3.768 ; voice3:inst7|n[0] ; voice3:inst7|n[0] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.731      ;
+; -3.768 ; voice3:inst7|n[0] ; voice3:inst7|n[6] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.731      ;
+; -3.768 ; voice3:inst7|n[0] ; voice3:inst7|n[5] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.731      ;
+; -3.768 ; voice3:inst7|n[0] ; voice3:inst7|n[4] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.731      ;
+; -3.768 ; voice3:inst7|n[0] ; voice3:inst7|n[3] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.731      ;
+; -3.768 ; voice3:inst7|n[0] ; voice3:inst7|n[2] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.731      ;
+; -3.768 ; voice3:inst7|n[0] ; voice3:inst7|n[1] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.731      ;
+; -3.768 ; voice3:inst7|n[0] ; voice3:inst7|n[8] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.731      ;
+; -3.768 ; voice3:inst7|n[0] ; voice3:inst7|n[7] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.731      ;
+; -3.689 ; voice3:inst7|n[7] ; voice3:inst7|n[0] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.652      ;
+; -3.689 ; voice3:inst7|n[7] ; voice3:inst7|n[6] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.652      ;
+; -3.689 ; voice3:inst7|n[7] ; voice3:inst7|n[5] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.652      ;
+; -3.689 ; voice3:inst7|n[7] ; voice3:inst7|n[4] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.652      ;
+; -3.689 ; voice3:inst7|n[7] ; voice3:inst7|n[3] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.652      ;
+; -3.689 ; voice3:inst7|n[7] ; voice3:inst7|n[2] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.652      ;
+; -3.689 ; voice3:inst7|n[7] ; voice3:inst7|n[1] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.652      ;
+; -3.689 ; voice3:inst7|n[7] ; voice3:inst7|n[8] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.652      ;
+; -3.689 ; voice3:inst7|n[7] ; voice3:inst7|n[7] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.652      ;
+; -3.644 ; voice3:inst7|n[3] ; voice3:inst7|n[0] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.607      ;
+; -3.644 ; voice3:inst7|n[3] ; voice3:inst7|n[6] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.607      ;
+; -3.644 ; voice3:inst7|n[3] ; voice3:inst7|n[5] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.607      ;
+; -3.644 ; voice3:inst7|n[3] ; voice3:inst7|n[4] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.607      ;
+; -3.644 ; voice3:inst7|n[3] ; voice3:inst7|n[3] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.607      ;
+; -3.644 ; voice3:inst7|n[3] ; voice3:inst7|n[2] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.607      ;
+; -3.644 ; voice3:inst7|n[3] ; voice3:inst7|n[1] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.607      ;
+; -3.644 ; voice3:inst7|n[3] ; voice3:inst7|n[8] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.607      ;
+; -3.644 ; voice3:inst7|n[3] ; voice3:inst7|n[7] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.607      ;
+; -3.514 ; voice3:inst7|n[4] ; voice3:inst7|n[0] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.477      ;
+; -3.514 ; voice3:inst7|n[4] ; voice3:inst7|n[6] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.477      ;
+; -3.514 ; voice3:inst7|n[4] ; voice3:inst7|n[5] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.477      ;
+; -3.514 ; voice3:inst7|n[4] ; voice3:inst7|n[4] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.477      ;
+; -3.514 ; voice3:inst7|n[4] ; voice3:inst7|n[3] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.477      ;
+; -3.514 ; voice3:inst7|n[4] ; voice3:inst7|n[2] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.477      ;
+; -3.514 ; voice3:inst7|n[4] ; voice3:inst7|n[1] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.477      ;
+; -3.514 ; voice3:inst7|n[4] ; voice3:inst7|n[8] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.477      ;
+; -3.514 ; voice3:inst7|n[4] ; voice3:inst7|n[7] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.477      ;
+; -3.480 ; voice3:inst7|n[8] ; voice3:inst7|n[0] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.443      ;
+; -3.480 ; voice3:inst7|n[8] ; voice3:inst7|n[6] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.443      ;
+; -3.480 ; voice3:inst7|n[8] ; voice3:inst7|n[5] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.443      ;
+; -3.480 ; voice3:inst7|n[8] ; voice3:inst7|n[4] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.443      ;
+; -3.480 ; voice3:inst7|n[8] ; voice3:inst7|n[3] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.443      ;
+; -3.480 ; voice3:inst7|n[8] ; voice3:inst7|n[2] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.443      ;
+; -3.480 ; voice3:inst7|n[8] ; voice3:inst7|n[1] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.443      ;
+; -3.480 ; voice3:inst7|n[8] ; voice3:inst7|n[8] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.443      ;
+; -3.480 ; voice3:inst7|n[8] ; voice3:inst7|n[7] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.443      ;
+; -3.322 ; voice3:inst7|n[1] ; voice3:inst7|n[0] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.285      ;
+; -3.322 ; voice3:inst7|n[1] ; voice3:inst7|n[6] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.285      ;
+; -3.322 ; voice3:inst7|n[1] ; voice3:inst7|n[5] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.285      ;
+; -3.322 ; voice3:inst7|n[1] ; voice3:inst7|n[4] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.285      ;
+; -3.322 ; voice3:inst7|n[1] ; voice3:inst7|n[3] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.285      ;
+; -3.322 ; voice3:inst7|n[1] ; voice3:inst7|n[2] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.285      ;
+; -3.322 ; voice3:inst7|n[1] ; voice3:inst7|n[1] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.285      ;
+; -3.322 ; voice3:inst7|n[1] ; voice3:inst7|n[8] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.285      ;
+; -3.322 ; voice3:inst7|n[1] ; voice3:inst7|n[7] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.285      ;
+; -3.247 ; voice3:inst7|n[6] ; voice3:inst7|n[0] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.210      ;
+; -3.247 ; voice3:inst7|n[6] ; voice3:inst7|n[6] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.210      ;
+; -3.247 ; voice3:inst7|n[6] ; voice3:inst7|n[5] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.210      ;
+; -3.247 ; voice3:inst7|n[6] ; voice3:inst7|n[4] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.210      ;
+; -3.247 ; voice3:inst7|n[6] ; voice3:inst7|n[3] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.210      ;
+; -3.247 ; voice3:inst7|n[6] ; voice3:inst7|n[2] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.210      ;
+; -3.247 ; voice3:inst7|n[6] ; voice3:inst7|n[1] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.210      ;
+; -3.247 ; voice3:inst7|n[6] ; voice3:inst7|n[8] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.210      ;
+; -3.247 ; voice3:inst7|n[6] ; voice3:inst7|n[7] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.210      ;
+; -3.089 ; voice3:inst7|n[5] ; voice3:inst7|n[0] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.052      ;
+; -3.089 ; voice3:inst7|n[5] ; voice3:inst7|n[6] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.052      ;
+; -3.089 ; voice3:inst7|n[5] ; voice3:inst7|n[5] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.052      ;
+; -3.089 ; voice3:inst7|n[5] ; voice3:inst7|n[4] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.052      ;
+; -3.089 ; voice3:inst7|n[5] ; voice3:inst7|n[3] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.052      ;
+; -3.089 ; voice3:inst7|n[5] ; voice3:inst7|n[2] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.052      ;
+; -3.089 ; voice3:inst7|n[5] ; voice3:inst7|n[1] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.052      ;
+; -3.089 ; voice3:inst7|n[5] ; voice3:inst7|n[8] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.052      ;
+; -3.089 ; voice3:inst7|n[5] ; voice3:inst7|n[7] ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 4.052      ;
+; -2.985 ; voice3:inst7|n[0] ; voice3:inst7|temp ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 3.948      ;
+; -2.811 ; voice3:inst7|n[7] ; voice3:inst7|temp ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 3.774      ;
+; -2.790 ; voice3:inst7|n[3] ; voice3:inst7|temp ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 3.753      ;
+; -2.592 ; voice3:inst7|n[2] ; voice3:inst7|temp ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 3.555      ;
+; -2.489 ; voice3:inst7|n[8] ; voice3:inst7|temp ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 3.452      ;
+; -2.309 ; voice3:inst7|n[4] ; voice3:inst7|temp ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 3.272      ;
+; -2.117 ; voice3:inst7|n[1] ; voice3:inst7|temp ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 3.080      ;
+; -2.084 ; voice3:inst7|n[6] ; voice3:inst7|temp ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 3.047      ;
+; -1.999 ; voice3:inst7|temp ; voice3:inst7|temp ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 2.962      ;
+; -1.864 ; voice3:inst7|n[5] ; voice3:inst7|temp ; voice2:inst5|zj ; voice2:inst5|zj ; 1.000        ; 0.000      ; 2.827      ;
++--------+-------------------+-------------------+-----------------+-----------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'frediv1:inst10|clk_out_1KHZ'                                                                                                                                                                                      ;
++--------+------------------------------------------------------+------------------------------------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+; Slack  ; From Node                                            ; To Node                                              ; Launch Clock                ; Latch Clock                 ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------------+------------------------------------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+; -0.978 ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|9  ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|87 ; frediv1:inst10|clk_out_1KHZ ; frediv1:inst10|clk_out_1KHZ ; 1.000        ; 0.000      ; 1.941      ;
+; -0.601 ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|9  ; scan_ledt:inst4|count4:inst|inst3                    ; frediv1:inst10|clk_out_1KHZ ; frediv1:inst10|clk_out_1KHZ ; 1.000        ; 0.000      ; 1.564      ;
+; -0.380 ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|87 ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|87 ; frediv1:inst10|clk_out_1KHZ ; frediv1:inst10|clk_out_1KHZ ; 1.000        ; 0.000      ; 1.343      ;
+; -0.366 ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|9  ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|9  ; frediv1:inst10|clk_out_1KHZ ; frediv1:inst10|clk_out_1KHZ ; 1.000        ; 0.000      ; 1.329      ;
+; -0.292 ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|87 ; scan_ledt:inst4|count4:inst|inst3                    ; frediv1:inst10|clk_out_1KHZ ; frediv1:inst10|clk_out_1KHZ ; 1.000        ; 0.000      ; 1.255      ;
++--------+------------------------------------------------------+------------------------------------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'frediv2:inst9|clk_out_1KHZ'                                                                                                               ;
++--------+-------------------+-------------------+----------------------------+----------------------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock               ; Latch Clock                ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+----------------------------+----------------------------+--------------+------------+------------+
+; -0.768 ; voice2:inst5|n[2] ; voice2:inst5|zj   ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 1.731      ;
+; -0.750 ; voice2:inst5|n[0] ; voice2:inst5|zj   ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 1.713      ;
+; -0.617 ; voice2:inst5|n[0] ; voice2:inst5|n[3] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 1.580      ;
+; -0.612 ; voice2:inst5|n[3] ; voice2:inst5|zj   ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 1.575      ;
+; -0.557 ; voice2:inst5|n[1] ; voice2:inst5|zj   ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 1.520      ;
+; -0.553 ; voice2:inst5|n[1] ; voice2:inst5|n[2] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 1.516      ;
+; -0.552 ; voice2:inst5|n[1] ; voice2:inst5|n[1] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 1.515      ;
+; -0.536 ; voice2:inst5|n[1] ; voice2:inst5|n[3] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 1.499      ;
+; -0.528 ; voice2:inst5|n[0] ; voice2:inst5|n[0] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 1.491      ;
+; -0.432 ; voice2:inst5|n[2] ; voice2:inst5|n[2] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 1.395      ;
+; -0.306 ; voice2:inst5|n[3] ; voice2:inst5|n[3] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 1.269      ;
+; -0.166 ; voice2:inst5|n[0] ; voice2:inst5|n[2] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 1.129      ;
+; -0.165 ; voice2:inst5|n[0] ; voice2:inst5|n[1] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 1.128      ;
+; -0.159 ; voice2:inst5|n[2] ; voice2:inst5|n[3] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 1.122      ;
+; 3.427  ; voice2:inst5|zj   ; voice2:inst5|zj   ; voice2:inst5|zj            ; frediv2:inst9|clk_out_1KHZ ; 0.500        ; 4.238      ; 1.498      ;
+; 3.927  ; voice2:inst5|zj   ; voice2:inst5|zj   ; voice2:inst5|zj            ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 4.238      ; 1.498      ;
++--------+-------------------+-------------------+----------------------------+----------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'frediv2:inst9|clk_out_1KHZ'                                                                                                                ;
++--------+-------------------+-------------------+----------------------------+----------------------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock               ; Latch Clock                ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+----------------------------+----------------------------+--------------+------------+------------+
+; -2.979 ; voice2:inst5|zj   ; voice2:inst5|zj   ; voice2:inst5|zj            ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 4.238      ; 1.498      ;
+; -2.479 ; voice2:inst5|zj   ; voice2:inst5|zj   ; voice2:inst5|zj            ; frediv2:inst9|clk_out_1KHZ ; -0.500       ; 4.238      ; 1.498      ;
+; 1.107  ; voice2:inst5|n[2] ; voice2:inst5|n[3] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 1.122      ;
+; 1.113  ; voice2:inst5|n[0] ; voice2:inst5|n[1] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 1.128      ;
+; 1.114  ; voice2:inst5|n[0] ; voice2:inst5|n[2] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 1.129      ;
+; 1.254  ; voice2:inst5|n[3] ; voice2:inst5|n[3] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 1.269      ;
+; 1.380  ; voice2:inst5|n[2] ; voice2:inst5|n[2] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 1.395      ;
+; 1.476  ; voice2:inst5|n[0] ; voice2:inst5|n[0] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 1.491      ;
+; 1.484  ; voice2:inst5|n[1] ; voice2:inst5|n[3] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 1.499      ;
+; 1.500  ; voice2:inst5|n[1] ; voice2:inst5|n[1] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 1.515      ;
+; 1.501  ; voice2:inst5|n[1] ; voice2:inst5|n[2] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 1.516      ;
+; 1.505  ; voice2:inst5|n[1] ; voice2:inst5|zj   ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 1.520      ;
+; 1.560  ; voice2:inst5|n[3] ; voice2:inst5|zj   ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 1.575      ;
+; 1.565  ; voice2:inst5|n[0] ; voice2:inst5|n[3] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 1.580      ;
+; 1.698  ; voice2:inst5|n[0] ; voice2:inst5|zj   ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 1.713      ;
+; 1.716  ; voice2:inst5|n[2] ; voice2:inst5|zj   ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 1.731      ;
++--------+-------------------+-------------------+----------------------------+----------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                          ;
++-------+--------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                ; To Node                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+; 1.045 ; numcount:inst1|count[31] ; numcount:inst1|count[31]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.060      ;
+; 1.312 ; numcount:inst1|count[1]  ; numcount:inst1|count[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.327      ;
+; 1.314 ; numcount:inst1|count[30] ; numcount:inst1|count[30]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.329      ;
+; 1.315 ; numcount:inst1|count[4]  ; numcount:inst1|count[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.330      ;
+; 1.319 ; selfcount:inst|trig      ; selfcount:inst|trig         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.334      ;
+; 1.323 ; numcount:inst1|count[24] ; numcount:inst1|count[24]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.338      ;
+; 1.323 ; numcount:inst1|count[10] ; numcount:inst1|count[10]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.338      ;
+; 1.323 ; numcount:inst1|count[14] ; numcount:inst1|count[14]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.338      ;
+; 1.323 ; numcount:inst1|count[20] ; numcount:inst1|count[20]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.338      ;
+; 1.326 ; numcount:inst1|count[26] ; numcount:inst1|count[26]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.341      ;
+; 1.326 ; numcount:inst1|count[11] ; numcount:inst1|count[11]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.341      ;
+; 1.326 ; numcount:inst1|count[16] ; numcount:inst1|count[16]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.341      ;
+; 1.326 ; numcount:inst1|count[21] ; numcount:inst1|count[21]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.341      ;
+; 1.326 ; numcount:inst1|count[6]  ; numcount:inst1|count[6]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.341      ;
+; 1.327 ; numcount:inst1|count[29] ; numcount:inst1|count[29]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.342      ;
+; 1.329 ; numcount:inst1|count[19] ; numcount:inst1|count[19]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.344      ;
+; 1.329 ; numcount:inst1|count[9]  ; numcount:inst1|count[9]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.344      ;
+; 1.369 ; frediv1:inst10|cnt[1]    ; frediv1:inst10|cnt[6]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.384      ;
+; 1.469 ; numcount:inst1|count[28] ; numcount:inst1|count[28]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.484      ;
+; 1.470 ; numcount:inst1|count[27] ; numcount:inst1|count[27]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.485      ;
+; 1.470 ; numcount:inst1|count[2]  ; numcount:inst1|count[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.485      ;
+; 1.475 ; numcount:inst1|count[3]  ; numcount:inst1|count[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.490      ;
+; 1.476 ; numcount:inst1|count[22] ; numcount:inst1|count[22]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.491      ;
+; 1.476 ; numcount:inst1|count[7]  ; numcount:inst1|count[7]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.491      ;
+; 1.476 ; numcount:inst1|count[12] ; numcount:inst1|count[12]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.491      ;
+; 1.476 ; numcount:inst1|count[17] ; numcount:inst1|count[17]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.491      ;
+; 1.476 ; numcount:inst1|count[5]  ; numcount:inst1|count[5]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.491      ;
+; 1.480 ; numcount:inst1|count[18] ; numcount:inst1|count[18]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.495      ;
+; 1.480 ; numcount:inst1|count[8]  ; numcount:inst1|count[8]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.495      ;
+; 1.481 ; numcount:inst1|count[23] ; numcount:inst1|count[23]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.496      ;
+; 1.481 ; numcount:inst1|count[13] ; numcount:inst1|count[13]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.496      ;
+; 1.482 ; numcount:inst1|count[25] ; numcount:inst1|count[25]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.497      ;
+; 1.482 ; numcount:inst1|count[15] ; numcount:inst1|count[15]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.497      ;
+; 1.535 ; frediv1:inst10|cnt[3]    ; frediv1:inst10|clk_out_1KHZ ; clk          ; clk         ; 0.000        ; 0.000      ; 1.550      ;
+; 1.678 ; frediv1:inst10|cnt[1]    ; frediv1:inst10|clk_out_1KHZ ; clk          ; clk         ; 0.000        ; 0.000      ; 1.693      ;
+; 1.679 ; frediv1:inst10|cnt[1]    ; frediv1:inst10|cnt[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.694      ;
+; 1.781 ; frediv1:inst10|cnt[3]    ; frediv1:inst10|cnt[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.796      ;
+; 1.797 ; selfcount:inst|tmp[3]    ; selfcount:inst|trig         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.812      ;
+; 1.803 ; frediv1:inst10|cnt[1]    ; frediv1:inst10|cnt[5]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.818      ;
+; 1.807 ; frediv1:inst10|cnt[1]    ; frediv1:inst10|cnt[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.822      ;
+; 1.860 ; frediv1:inst10|cnt[4]    ; frediv1:inst10|clk_out_1KHZ ; clk          ; clk         ; 0.000        ; 0.000      ; 1.875      ;
+; 1.877 ; frediv1:inst10|cnt[0]    ; frediv1:inst10|cnt[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.892      ;
+; 1.907 ; numcount:inst1|count[0]  ; numcount:inst1|count[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.922      ;
+; 1.911 ; numcount:inst1|count[1]  ; numcount:inst1|count[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.926      ;
+; 1.914 ; numcount:inst1|count[4]  ; numcount:inst1|count[5]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.929      ;
+; 1.922 ; numcount:inst1|count[24] ; numcount:inst1|count[25]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.937      ;
+; 1.922 ; numcount:inst1|count[14] ; numcount:inst1|count[15]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.937      ;
+; 1.925 ; numcount:inst1|count[26] ; numcount:inst1|count[27]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.940      ;
+; 1.925 ; numcount:inst1|count[21] ; numcount:inst1|count[22]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.940      ;
+; 1.925 ; numcount:inst1|count[6]  ; numcount:inst1|count[7]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.940      ;
+; 1.925 ; numcount:inst1|count[11] ; numcount:inst1|count[12]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.940      ;
+; 1.925 ; numcount:inst1|count[16] ; numcount:inst1|count[17]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.940      ;
+; 1.926 ; numcount:inst1|count[29] ; numcount:inst1|count[30]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.941      ;
+; 1.928 ; numcount:inst1|count[9]  ; numcount:inst1|count[10]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.943      ;
+; 1.928 ; numcount:inst1|count[19] ; numcount:inst1|count[20]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.943      ;
+; 1.988 ; frediv1:inst10|cnt[6]    ; frediv1:inst10|cnt[6]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.003      ;
+; 1.989 ; numcount:inst1|count[1]  ; numcount:inst1|count[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.004      ;
+; 2.003 ; numcount:inst1|count[26] ; numcount:inst1|count[28]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.018      ;
+; 2.003 ; numcount:inst1|count[21] ; numcount:inst1|count[23]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.018      ;
+; 2.003 ; numcount:inst1|count[11] ; numcount:inst1|count[13]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.018      ;
+; 2.003 ; numcount:inst1|count[16] ; numcount:inst1|count[18]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.018      ;
+; 2.003 ; numcount:inst1|count[6]  ; numcount:inst1|count[8]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.018      ;
+; 2.009 ; selfcount:inst|tmp[2]    ; selfcount:inst|tmp[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.024      ;
+; 2.025 ; selfcount:inst|tmp[1]    ; selfcount:inst|clr          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.040      ;
+; 2.034 ; frediv1:inst10|cnt[5]    ; frediv1:inst10|clk_out_1KHZ ; clk          ; clk         ; 0.000        ; 0.000      ; 2.049      ;
+; 2.057 ; frediv1:inst10|cnt[4]    ; frediv1:inst10|cnt[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.072      ;
+; 2.057 ; frediv1:inst10|cnt[5]    ; frediv1:inst10|cnt[5]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.072      ;
+; 2.067 ; numcount:inst1|count[1]  ; numcount:inst1|count[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.082      ;
+; 2.078 ; numcount:inst1|count[28] ; numcount:inst1|count[29]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.093      ;
+; 2.079 ; numcount:inst1|count[2]  ; numcount:inst1|count[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.094      ;
+; 2.079 ; numcount:inst1|count[27] ; numcount:inst1|count[28]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.094      ;
+; 2.081 ; numcount:inst1|count[21] ; numcount:inst1|count[24]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.096      ;
+; 2.081 ; numcount:inst1|count[11] ; numcount:inst1|count[14]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.096      ;
+; 2.081 ; numcount:inst1|count[16] ; numcount:inst1|count[19]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.096      ;
+; 2.081 ; numcount:inst1|count[6]  ; numcount:inst1|count[9]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.096      ;
+; 2.081 ; numcount:inst1|count[26] ; numcount:inst1|count[29]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.096      ;
+; 2.084 ; numcount:inst1|count[3]  ; numcount:inst1|count[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.099      ;
+; 2.085 ; numcount:inst1|count[22] ; numcount:inst1|count[23]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.100      ;
+; 2.085 ; numcount:inst1|count[12] ; numcount:inst1|count[13]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.100      ;
+; 2.085 ; numcount:inst1|count[17] ; numcount:inst1|count[18]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.100      ;
+; 2.085 ; numcount:inst1|count[7]  ; numcount:inst1|count[8]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.100      ;
+; 2.089 ; numcount:inst1|count[18] ; numcount:inst1|count[19]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.104      ;
+; 2.089 ; numcount:inst1|count[8]  ; numcount:inst1|count[9]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.104      ;
+; 2.090 ; numcount:inst1|count[23] ; numcount:inst1|count[24]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.105      ;
+; 2.090 ; numcount:inst1|count[13] ; numcount:inst1|count[14]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.105      ;
+; 2.099 ; selfcount:inst|tmp[15]   ; selfcount:inst|clr          ; clk          ; clk         ; 0.000        ; 0.023      ; 2.137      ;
+; 2.129 ; numcount:inst1|count[30] ; numcount:inst1|count[31]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.144      ;
+; 2.136 ; selfcount:inst|tmp[8]    ; selfcount:inst|clr          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.151      ;
+; 2.138 ; numcount:inst1|count[20] ; numcount:inst1|count[25]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.153      ;
+; 2.138 ; numcount:inst1|count[20] ; numcount:inst1|count[24]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.153      ;
+; 2.138 ; numcount:inst1|count[20] ; numcount:inst1|count[23]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.153      ;
+; 2.138 ; numcount:inst1|count[20] ; numcount:inst1|count[22]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.153      ;
+; 2.138 ; numcount:inst1|count[10] ; numcount:inst1|count[12]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.153      ;
+; 2.138 ; numcount:inst1|count[10] ; numcount:inst1|count[13]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.153      ;
+; 2.138 ; numcount:inst1|count[10] ; numcount:inst1|count[11]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.153      ;
+; 2.138 ; numcount:inst1|count[10] ; numcount:inst1|count[14]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.153      ;
+; 2.138 ; numcount:inst1|count[10] ; numcount:inst1|count[15]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.153      ;
+; 2.138 ; numcount:inst1|count[20] ; numcount:inst1|count[21]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.153      ;
+; 2.145 ; numcount:inst1|count[1]  ; numcount:inst1|count[5]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.160      ;
+; 2.148 ; numcount:inst1|count[29] ; numcount:inst1|count[31]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.163      ;
++-------+--------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'frediv1:inst10|clk_out_1KHZ'                                                                                                                                                                                      ;
++-------+------------------------------------------------------+------------------------------------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+; Slack ; From Node                                            ; To Node                                              ; Launch Clock                ; Latch Clock                 ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------------+------------------------------------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+; 1.240 ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|87 ; scan_ledt:inst4|count4:inst|inst3                    ; frediv1:inst10|clk_out_1KHZ ; frediv1:inst10|clk_out_1KHZ ; 0.000        ; 0.000      ; 1.255      ;
+; 1.314 ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|9  ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|9  ; frediv1:inst10|clk_out_1KHZ ; frediv1:inst10|clk_out_1KHZ ; 0.000        ; 0.000      ; 1.329      ;
+; 1.328 ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|87 ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|87 ; frediv1:inst10|clk_out_1KHZ ; frediv1:inst10|clk_out_1KHZ ; 0.000        ; 0.000      ; 1.343      ;
+; 1.549 ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|9  ; scan_ledt:inst4|count4:inst|inst3                    ; frediv1:inst10|clk_out_1KHZ ; frediv1:inst10|clk_out_1KHZ ; 0.000        ; 0.000      ; 1.564      ;
+; 1.913 ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|9  ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|87 ; frediv1:inst10|clk_out_1KHZ ; frediv1:inst10|clk_out_1KHZ ; 0.000        ; 0.000      ; 1.928      ;
++-------+------------------------------------------------------+------------------------------------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'voice2:inst5|zj'                                                                                                    ;
++-------+-------------------+-------------------+-----------------+-----------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node           ; Launch Clock    ; Latch Clock     ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+-------------------+-----------------+-----------------+--------------+------------+------------+
+; 1.321 ; voice3:inst7|n[8] ; voice3:inst7|n[8] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 1.336      ;
+; 1.331 ; voice3:inst7|n[0] ; voice3:inst7|n[0] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 1.346      ;
+; 1.332 ; voice3:inst7|n[5] ; voice3:inst7|n[5] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 1.347      ;
+; 1.342 ; voice3:inst7|n[3] ; voice3:inst7|n[3] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 1.357      ;
+; 1.475 ; voice3:inst7|n[7] ; voice3:inst7|n[7] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 1.490      ;
+; 1.480 ; voice3:inst7|n[6] ; voice3:inst7|n[6] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 1.495      ;
+; 1.546 ; voice3:inst7|n[1] ; voice3:inst7|n[1] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 1.561      ;
+; 1.883 ; voice3:inst7|n[2] ; voice3:inst7|n[2] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 1.898      ;
+; 1.930 ; voice3:inst7|n[0] ; voice3:inst7|n[1] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 1.945      ;
+; 1.931 ; voice3:inst7|n[5] ; voice3:inst7|n[6] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 1.946      ;
+; 1.941 ; voice3:inst7|n[3] ; voice3:inst7|n[4] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 1.956      ;
+; 2.008 ; voice3:inst7|n[0] ; voice3:inst7|n[2] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.023      ;
+; 2.009 ; voice3:inst7|n[5] ; voice3:inst7|n[7] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.024      ;
+; 2.061 ; voice3:inst7|n[4] ; voice3:inst7|n[4] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.076      ;
+; 2.084 ; voice3:inst7|n[7] ; voice3:inst7|n[8] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.099      ;
+; 2.086 ; voice3:inst7|n[0] ; voice3:inst7|n[3] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.101      ;
+; 2.087 ; voice3:inst7|n[5] ; voice3:inst7|n[8] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.102      ;
+; 2.089 ; voice3:inst7|n[6] ; voice3:inst7|n[7] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.104      ;
+; 2.113 ; voice3:inst7|n[1] ; voice3:inst7|temp ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.128      ;
+; 2.145 ; voice3:inst7|n[1] ; voice3:inst7|n[2] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.160      ;
+; 2.163 ; voice3:inst7|n[3] ; voice3:inst7|n[6] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.178      ;
+; 2.163 ; voice3:inst7|n[3] ; voice3:inst7|n[5] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.178      ;
+; 2.163 ; voice3:inst7|n[3] ; voice3:inst7|n[8] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.178      ;
+; 2.163 ; voice3:inst7|n[3] ; voice3:inst7|n[7] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.178      ;
+; 2.164 ; voice3:inst7|n[0] ; voice3:inst7|n[4] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.179      ;
+; 2.167 ; voice3:inst7|n[6] ; voice3:inst7|n[8] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.182      ;
+; 2.223 ; voice3:inst7|n[1] ; voice3:inst7|n[3] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.238      ;
+; 2.301 ; voice3:inst7|n[1] ; voice3:inst7|n[4] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.316      ;
+; 2.353 ; voice3:inst7|n[5] ; voice3:inst7|temp ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.368      ;
+; 2.392 ; voice3:inst7|n[0] ; voice3:inst7|n[6] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.407      ;
+; 2.392 ; voice3:inst7|n[0] ; voice3:inst7|n[5] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.407      ;
+; 2.392 ; voice3:inst7|n[0] ; voice3:inst7|n[8] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.407      ;
+; 2.392 ; voice3:inst7|n[0] ; voice3:inst7|n[7] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.407      ;
+; 2.423 ; voice3:inst7|n[4] ; voice3:inst7|temp ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.438      ;
+; 2.482 ; voice3:inst7|n[2] ; voice3:inst7|n[3] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.497      ;
+; 2.527 ; voice3:inst7|n[1] ; voice3:inst7|n[6] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.542      ;
+; 2.527 ; voice3:inst7|n[1] ; voice3:inst7|n[5] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.542      ;
+; 2.527 ; voice3:inst7|n[1] ; voice3:inst7|n[8] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.542      ;
+; 2.527 ; voice3:inst7|n[1] ; voice3:inst7|n[7] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.542      ;
+; 2.560 ; voice3:inst7|n[2] ; voice3:inst7|n[4] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.575      ;
+; 2.784 ; voice3:inst7|n[2] ; voice3:inst7|n[6] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.799      ;
+; 2.784 ; voice3:inst7|n[2] ; voice3:inst7|n[5] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.799      ;
+; 2.784 ; voice3:inst7|n[2] ; voice3:inst7|n[8] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.799      ;
+; 2.784 ; voice3:inst7|n[2] ; voice3:inst7|n[7] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.799      ;
+; 2.880 ; voice3:inst7|n[4] ; voice3:inst7|n[6] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.895      ;
+; 2.880 ; voice3:inst7|n[4] ; voice3:inst7|n[5] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.895      ;
+; 2.880 ; voice3:inst7|n[4] ; voice3:inst7|n[8] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.895      ;
+; 2.880 ; voice3:inst7|n[4] ; voice3:inst7|n[7] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.895      ;
+; 2.947 ; voice3:inst7|temp ; voice3:inst7|temp ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 2.962      ;
+; 2.990 ; voice3:inst7|n[6] ; voice3:inst7|temp ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 3.005      ;
+; 3.191 ; voice3:inst7|n[2] ; voice3:inst7|temp ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 3.206      ;
+; 3.223 ; voice3:inst7|n[8] ; voice3:inst7|temp ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 3.238      ;
+; 3.387 ; voice3:inst7|n[3] ; voice3:inst7|temp ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 3.402      ;
+; 3.432 ; voice3:inst7|n[7] ; voice3:inst7|temp ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 3.447      ;
+; 3.797 ; voice3:inst7|n[1] ; voice3:inst7|n[0] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 3.812      ;
+; 3.815 ; voice3:inst7|n[6] ; voice3:inst7|n[0] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 3.830      ;
+; 3.815 ; voice3:inst7|n[6] ; voice3:inst7|n[5] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 3.830      ;
+; 3.815 ; voice3:inst7|n[6] ; voice3:inst7|n[4] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 3.830      ;
+; 3.815 ; voice3:inst7|n[6] ; voice3:inst7|n[3] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 3.830      ;
+; 3.815 ; voice3:inst7|n[6] ; voice3:inst7|n[2] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 3.830      ;
+; 3.815 ; voice3:inst7|n[6] ; voice3:inst7|n[1] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 3.830      ;
+; 3.933 ; voice3:inst7|n[0] ; voice3:inst7|temp ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 3.948      ;
+; 3.974 ; voice3:inst7|n[2] ; voice3:inst7|n[0] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 3.989      ;
+; 3.974 ; voice3:inst7|n[2] ; voice3:inst7|n[1] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 3.989      ;
+; 4.017 ; voice3:inst7|n[5] ; voice3:inst7|n[0] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.032      ;
+; 4.017 ; voice3:inst7|n[5] ; voice3:inst7|n[4] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.032      ;
+; 4.017 ; voice3:inst7|n[5] ; voice3:inst7|n[3] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.032      ;
+; 4.017 ; voice3:inst7|n[5] ; voice3:inst7|n[2] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.032      ;
+; 4.017 ; voice3:inst7|n[5] ; voice3:inst7|n[1] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.032      ;
+; 4.107 ; voice3:inst7|n[4] ; voice3:inst7|n[0] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.122      ;
+; 4.107 ; voice3:inst7|n[4] ; voice3:inst7|n[3] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.122      ;
+; 4.107 ; voice3:inst7|n[4] ; voice3:inst7|n[2] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.122      ;
+; 4.107 ; voice3:inst7|n[4] ; voice3:inst7|n[1] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.122      ;
+; 4.220 ; voice3:inst7|n[8] ; voice3:inst7|n[0] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.235      ;
+; 4.220 ; voice3:inst7|n[8] ; voice3:inst7|n[6] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.235      ;
+; 4.220 ; voice3:inst7|n[8] ; voice3:inst7|n[5] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.235      ;
+; 4.220 ; voice3:inst7|n[8] ; voice3:inst7|n[4] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.235      ;
+; 4.220 ; voice3:inst7|n[8] ; voice3:inst7|n[3] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.235      ;
+; 4.220 ; voice3:inst7|n[8] ; voice3:inst7|n[2] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.235      ;
+; 4.220 ; voice3:inst7|n[8] ; voice3:inst7|n[1] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.235      ;
+; 4.220 ; voice3:inst7|n[8] ; voice3:inst7|n[7] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.235      ;
+; 4.521 ; voice3:inst7|n[3] ; voice3:inst7|n[0] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.536      ;
+; 4.521 ; voice3:inst7|n[3] ; voice3:inst7|n[2] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.536      ;
+; 4.521 ; voice3:inst7|n[3] ; voice3:inst7|n[1] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.536      ;
+; 4.542 ; voice3:inst7|n[7] ; voice3:inst7|n[0] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.557      ;
+; 4.542 ; voice3:inst7|n[7] ; voice3:inst7|n[6] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.557      ;
+; 4.542 ; voice3:inst7|n[7] ; voice3:inst7|n[5] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.557      ;
+; 4.542 ; voice3:inst7|n[7] ; voice3:inst7|n[4] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.557      ;
+; 4.542 ; voice3:inst7|n[7] ; voice3:inst7|n[3] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.557      ;
+; 4.542 ; voice3:inst7|n[7] ; voice3:inst7|n[2] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.557      ;
+; 4.542 ; voice3:inst7|n[7] ; voice3:inst7|n[1] ; voice2:inst5|zj ; voice2:inst5|zj ; 0.000        ; 0.000      ; 4.557      ;
++-------+-------------------+-------------------+-----------------+-----------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'frediv2:inst9|clk_out_1KHZ'                                                                                                            ;
++--------+-------------------+-------------------+----------------------------+----------------------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock               ; Latch Clock                ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+----------------------------+----------------------------+--------------+------------+------------+
+; -5.036 ; voice2:inst5|n[1] ; voice2:inst5|n[3] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 5.999      ;
+; -5.036 ; voice2:inst5|n[1] ; voice2:inst5|n[1] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 5.999      ;
+; -5.036 ; voice2:inst5|n[1] ; voice2:inst5|n[2] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 5.999      ;
+; -5.036 ; voice2:inst5|n[1] ; voice2:inst5|n[0] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 5.999      ;
+; -5.036 ; voice2:inst5|n[1] ; voice2:inst5|zj   ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 5.999      ;
+; -4.928 ; voice2:inst5|n[0] ; voice2:inst5|n[3] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 5.891      ;
+; -4.928 ; voice2:inst5|n[0] ; voice2:inst5|n[1] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 5.891      ;
+; -4.928 ; voice2:inst5|n[0] ; voice2:inst5|n[2] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 5.891      ;
+; -4.928 ; voice2:inst5|n[0] ; voice2:inst5|n[0] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 5.891      ;
+; -4.928 ; voice2:inst5|n[0] ; voice2:inst5|zj   ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 5.891      ;
+; -4.769 ; voice2:inst5|n[3] ; voice2:inst5|n[3] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 5.732      ;
+; -4.769 ; voice2:inst5|n[3] ; voice2:inst5|n[1] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 5.732      ;
+; -4.769 ; voice2:inst5|n[3] ; voice2:inst5|n[2] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 5.732      ;
+; -4.769 ; voice2:inst5|n[3] ; voice2:inst5|n[0] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 5.732      ;
+; -4.769 ; voice2:inst5|n[3] ; voice2:inst5|zj   ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 5.732      ;
+; -4.610 ; voice2:inst5|n[2] ; voice2:inst5|n[3] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 5.573      ;
+; -4.610 ; voice2:inst5|n[2] ; voice2:inst5|n[1] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 5.573      ;
+; -4.610 ; voice2:inst5|n[2] ; voice2:inst5|n[2] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 5.573      ;
+; -4.610 ; voice2:inst5|n[2] ; voice2:inst5|n[0] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 5.573      ;
+; -4.610 ; voice2:inst5|n[2] ; voice2:inst5|zj   ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 1.000        ; 0.000      ; 5.573      ;
++--------+-------------------+-------------------+----------------------------+----------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'clk'                                                                                                              ;
++--------+--------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node          ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[27] ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[31] ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[26] ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[30] ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[25] ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[29] ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[24] ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[28] ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[23] ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[22] ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[7]  ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[12] ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[10] ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[13] ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[11] ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[14] ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[15] ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[18] ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[20] ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[19] ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[16] ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[17] ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[21] ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[8]  ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[9]  ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[6]  ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[5]  ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[4]  ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[3]  ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[2]  ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[1]  ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
+; -3.953 ; selfcount:inst|clr ; numcount:inst1|count[0]  ; clk          ; clk         ; 1.000        ; 0.037      ; 4.953      ;
++--------+--------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'frediv1:inst10|clk_out_1KHZ'                                                                                                                                                                ;
++--------+-----------------------------------+------------------------------------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+; Slack  ; From Node                         ; To Node                                              ; Launch Clock                ; Latch Clock                 ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------+------------------------------------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+; -3.951 ; scan_ledt:inst4|count4:inst|inst3 ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|9  ; frediv1:inst10|clk_out_1KHZ ; frediv1:inst10|clk_out_1KHZ ; 1.000        ; 0.000      ; 4.914      ;
+; -3.951 ; scan_ledt:inst4|count4:inst|inst3 ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|87 ; frediv1:inst10|clk_out_1KHZ ; frediv1:inst10|clk_out_1KHZ ; 1.000        ; 0.000      ; 4.914      ;
++--------+-----------------------------------+------------------------------------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'frediv1:inst10|clk_out_1KHZ'                                                                                                                                                                ;
++-------+-----------------------------------+------------------------------------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+; Slack ; From Node                         ; To Node                                              ; Launch Clock                ; Latch Clock                 ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------+------------------------------------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+; 4.899 ; scan_ledt:inst4|count4:inst|inst3 ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|9  ; frediv1:inst10|clk_out_1KHZ ; frediv1:inst10|clk_out_1KHZ ; 0.000        ; 0.000      ; 4.914      ;
+; 4.899 ; scan_ledt:inst4|count4:inst|inst3 ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|87 ; frediv1:inst10|clk_out_1KHZ ; frediv1:inst10|clk_out_1KHZ ; 0.000        ; 0.000      ; 4.914      ;
++-------+-----------------------------------+------------------------------------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'clk'                                                                                                              ;
++-------+--------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node          ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[27] ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[31] ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[26] ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[30] ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[25] ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[29] ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[24] ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[28] ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[23] ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[22] ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[7]  ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[12] ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[10] ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[13] ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[11] ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[14] ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[15] ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[18] ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[20] ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[19] ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[16] ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[17] ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[21] ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[8]  ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[9]  ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[6]  ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[5]  ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[4]  ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[3]  ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[2]  ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[1]  ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
+; 4.901 ; selfcount:inst|clr ; numcount:inst1|count[0]  ; clk          ; clk         ; 0.000        ; 0.037      ; 4.953      ;
++-------+--------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'frediv2:inst9|clk_out_1KHZ'                                                                                                            ;
++-------+-------------------+-------------------+----------------------------+----------------------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node           ; Launch Clock               ; Latch Clock                ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+-------------------+----------------------------+----------------------------+--------------+------------+------------+
+; 5.558 ; voice2:inst5|n[2] ; voice2:inst5|n[3] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 5.573      ;
+; 5.558 ; voice2:inst5|n[2] ; voice2:inst5|n[1] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 5.573      ;
+; 5.558 ; voice2:inst5|n[2] ; voice2:inst5|n[2] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 5.573      ;
+; 5.558 ; voice2:inst5|n[2] ; voice2:inst5|n[0] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 5.573      ;
+; 5.558 ; voice2:inst5|n[2] ; voice2:inst5|zj   ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 5.573      ;
+; 5.717 ; voice2:inst5|n[3] ; voice2:inst5|n[3] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 5.732      ;
+; 5.717 ; voice2:inst5|n[3] ; voice2:inst5|n[1] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 5.732      ;
+; 5.717 ; voice2:inst5|n[3] ; voice2:inst5|n[2] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 5.732      ;
+; 5.717 ; voice2:inst5|n[3] ; voice2:inst5|n[0] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 5.732      ;
+; 5.717 ; voice2:inst5|n[3] ; voice2:inst5|zj   ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 5.732      ;
+; 5.876 ; voice2:inst5|n[0] ; voice2:inst5|n[3] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 5.891      ;
+; 5.876 ; voice2:inst5|n[0] ; voice2:inst5|n[1] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 5.891      ;
+; 5.876 ; voice2:inst5|n[0] ; voice2:inst5|n[2] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 5.891      ;
+; 5.876 ; voice2:inst5|n[0] ; voice2:inst5|n[0] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 5.891      ;
+; 5.876 ; voice2:inst5|n[0] ; voice2:inst5|zj   ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 5.891      ;
+; 5.984 ; voice2:inst5|n[1] ; voice2:inst5|n[3] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 5.999      ;
+; 5.984 ; voice2:inst5|n[1] ; voice2:inst5|n[1] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 5.999      ;
+; 5.984 ; voice2:inst5|n[1] ; voice2:inst5|n[2] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 5.999      ;
+; 5.984 ; voice2:inst5|n[1] ; voice2:inst5|n[0] ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 5.999      ;
+; 5.984 ; voice2:inst5|n[1] ; voice2:inst5|zj   ; frediv2:inst9|clk_out_1KHZ ; frediv2:inst9|clk_out_1KHZ ; 0.000        ; 0.000      ; 5.999      ;
++-------+-------------------+-------------------+----------------------------+----------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'clk'                                                                                   ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                      ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+; -1.583 ; 1.000        ; 2.583          ; Port Rate        ; clk   ; Rise       ; clk                         ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; frediv1:inst10|clk_out_1KHZ ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; frediv1:inst10|clk_out_1KHZ ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; frediv1:inst10|cnt[0]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; frediv1:inst10|cnt[0]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; frediv1:inst10|cnt[1]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; frediv1:inst10|cnt[1]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; frediv1:inst10|cnt[2]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; frediv1:inst10|cnt[2]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; frediv1:inst10|cnt[3]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; frediv1:inst10|cnt[3]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; frediv1:inst10|cnt[4]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; frediv1:inst10|cnt[4]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; frediv1:inst10|cnt[5]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; frediv1:inst10|cnt[5]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; frediv1:inst10|cnt[6]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; frediv1:inst10|cnt[6]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; frediv2:inst9|clk_out_1KHZ  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; frediv2:inst9|clk_out_1KHZ  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[0]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[0]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[10]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[10]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[11]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[11]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[12]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[12]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[13]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[13]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[14]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[14]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[15]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[15]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[16]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[16]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[17]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[17]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[18]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[18]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[19]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[19]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[1]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[1]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[20]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[20]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[21]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[21]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[22]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[22]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[23]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[23]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[24]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[24]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[25]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[25]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[26]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[26]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[27]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[27]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[28]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[28]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[29]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[29]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[2]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[2]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[30]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[30]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[31]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[31]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[3]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[3]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[4]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[4]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[5]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[5]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[6]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[6]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[7]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[7]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[8]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[8]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; numcount:inst1|count[9]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; numcount:inst1|count[9]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; selfcount:inst|clr          ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; selfcount:inst|clr          ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; selfcount:inst|tmp[0]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; selfcount:inst|tmp[0]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; selfcount:inst|tmp[10]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; selfcount:inst|tmp[10]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; selfcount:inst|tmp[11]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; selfcount:inst|tmp[11]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; selfcount:inst|tmp[12]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; selfcount:inst|tmp[12]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; selfcount:inst|tmp[13]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; selfcount:inst|tmp[13]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; selfcount:inst|tmp[14]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; selfcount:inst|tmp[14]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; selfcount:inst|tmp[15]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; selfcount:inst|tmp[15]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; selfcount:inst|tmp[16]      ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'voice2:inst5|zj'                                                                       ;
++--------+--------------+----------------+------------------+-----------------+------------+-------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock           ; Clock Edge ; Target            ;
++--------+--------------+----------------+------------------+-----------------+------------+-------------------+
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; voice2:inst5|zj ; Fall       ; voice3:inst7|n[0] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; voice2:inst5|zj ; Fall       ; voice3:inst7|n[0] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; voice2:inst5|zj ; Fall       ; voice3:inst7|n[1] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; voice2:inst5|zj ; Fall       ; voice3:inst7|n[1] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; voice2:inst5|zj ; Fall       ; voice3:inst7|n[2] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; voice2:inst5|zj ; Fall       ; voice3:inst7|n[2] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; voice2:inst5|zj ; Fall       ; voice3:inst7|n[3] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; voice2:inst5|zj ; Fall       ; voice3:inst7|n[3] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; voice2:inst5|zj ; Fall       ; voice3:inst7|n[4] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; voice2:inst5|zj ; Fall       ; voice3:inst7|n[4] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; voice2:inst5|zj ; Fall       ; voice3:inst7|n[5] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; voice2:inst5|zj ; Fall       ; voice3:inst7|n[5] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; voice2:inst5|zj ; Fall       ; voice3:inst7|n[6] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; voice2:inst5|zj ; Fall       ; voice3:inst7|n[6] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; voice2:inst5|zj ; Fall       ; voice3:inst7|n[7] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; voice2:inst5|zj ; Fall       ; voice3:inst7|n[7] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; voice2:inst5|zj ; Fall       ; voice3:inst7|n[8] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; voice2:inst5|zj ; Fall       ; voice3:inst7|n[8] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; voice2:inst5|zj ; Fall       ; voice3:inst7|temp ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; voice2:inst5|zj ; Fall       ; voice3:inst7|temp ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; voice2:inst5|zj ; Rise       ; inst5|zj|regout   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; voice2:inst5|zj ; Rise       ; inst5|zj|regout   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; voice2:inst5|zj ; Rise       ; inst7|n[0]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; voice2:inst5|zj ; Rise       ; inst7|n[0]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; voice2:inst5|zj ; Rise       ; inst7|n[1]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; voice2:inst5|zj ; Rise       ; inst7|n[1]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; voice2:inst5|zj ; Rise       ; inst7|n[2]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; voice2:inst5|zj ; Rise       ; inst7|n[2]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; voice2:inst5|zj ; Rise       ; inst7|n[3]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; voice2:inst5|zj ; Rise       ; inst7|n[3]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; voice2:inst5|zj ; Rise       ; inst7|n[4]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; voice2:inst5|zj ; Rise       ; inst7|n[4]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; voice2:inst5|zj ; Rise       ; inst7|n[5]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; voice2:inst5|zj ; Rise       ; inst7|n[5]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; voice2:inst5|zj ; Rise       ; inst7|n[6]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; voice2:inst5|zj ; Rise       ; inst7|n[6]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; voice2:inst5|zj ; Rise       ; inst7|n[7]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; voice2:inst5|zj ; Rise       ; inst7|n[7]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; voice2:inst5|zj ; Rise       ; inst7|n[8]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; voice2:inst5|zj ; Rise       ; inst7|n[8]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; voice2:inst5|zj ; Rise       ; inst7|temp|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; voice2:inst5|zj ; Rise       ; inst7|temp|clk    ;
++--------+--------------+----------------+------------------+-----------------+------------+-------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'frediv2:inst9|clk_out_1KHZ'                                                                               ;
++--------+--------------+----------------+------------------+----------------------------+------------+---------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                      ; Clock Edge ; Target                    ;
++--------+--------------+----------------+------------------+----------------------------+------------+---------------------------+
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; frediv2:inst9|clk_out_1KHZ ; Rise       ; voice2:inst5|n[0]         ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; frediv2:inst9|clk_out_1KHZ ; Rise       ; voice2:inst5|n[0]         ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; frediv2:inst9|clk_out_1KHZ ; Rise       ; voice2:inst5|n[1]         ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; frediv2:inst9|clk_out_1KHZ ; Rise       ; voice2:inst5|n[1]         ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; frediv2:inst9|clk_out_1KHZ ; Rise       ; voice2:inst5|n[2]         ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; frediv2:inst9|clk_out_1KHZ ; Rise       ; voice2:inst5|n[2]         ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; frediv2:inst9|clk_out_1KHZ ; Rise       ; voice2:inst5|n[3]         ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; frediv2:inst9|clk_out_1KHZ ; Rise       ; voice2:inst5|n[3]         ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; frediv2:inst9|clk_out_1KHZ ; Rise       ; voice2:inst5|zj           ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; frediv2:inst9|clk_out_1KHZ ; Rise       ; voice2:inst5|zj           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; frediv2:inst9|clk_out_1KHZ ; Rise       ; inst5|n[0]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; frediv2:inst9|clk_out_1KHZ ; Rise       ; inst5|n[0]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; frediv2:inst9|clk_out_1KHZ ; Rise       ; inst5|n[1]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; frediv2:inst9|clk_out_1KHZ ; Rise       ; inst5|n[1]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; frediv2:inst9|clk_out_1KHZ ; Rise       ; inst5|n[2]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; frediv2:inst9|clk_out_1KHZ ; Rise       ; inst5|n[2]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; frediv2:inst9|clk_out_1KHZ ; Rise       ; inst5|n[3]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; frediv2:inst9|clk_out_1KHZ ; Rise       ; inst5|n[3]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; frediv2:inst9|clk_out_1KHZ ; Rise       ; inst5|zj|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; frediv2:inst9|clk_out_1KHZ ; Rise       ; inst5|zj|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; frediv2:inst9|clk_out_1KHZ ; Rise       ; inst9|clk_out_1KHZ|regout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; frediv2:inst9|clk_out_1KHZ ; Rise       ; inst9|clk_out_1KHZ|regout ;
++--------+--------------+----------------+------------------+----------------------------+------------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'frediv1:inst10|clk_out_1KHZ'                                                                                                          ;
++--------+--------------+----------------+------------------+-----------------------------+------------+------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                       ; Clock Edge ; Target                                               ;
++--------+--------------+----------------+------------------+-----------------------------+------------+------------------------------------------------------+
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; frediv1:inst10|clk_out_1KHZ ; Rise       ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|87 ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; frediv1:inst10|clk_out_1KHZ ; Rise       ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|87 ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; frediv1:inst10|clk_out_1KHZ ; Rise       ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|9  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; frediv1:inst10|clk_out_1KHZ ; Rise       ; scan_ledt:inst4|count4:inst|74161:inst|f74161:sub|9  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; frediv1:inst10|clk_out_1KHZ ; Rise       ; scan_ledt:inst4|count4:inst|inst3                    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; frediv1:inst10|clk_out_1KHZ ; Rise       ; scan_ledt:inst4|count4:inst|inst3                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; frediv1:inst10|clk_out_1KHZ ; Rise       ; inst10|clk_out_1KHZ|regout                           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; frediv1:inst10|clk_out_1KHZ ; Rise       ; inst10|clk_out_1KHZ|regout                           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; frediv1:inst10|clk_out_1KHZ ; Rise       ; inst4|inst|inst3|clk                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; frediv1:inst10|clk_out_1KHZ ; Rise       ; inst4|inst|inst3|clk                                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; frediv1:inst10|clk_out_1KHZ ; Rise       ; inst4|inst|inst|sub|87|clk                           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; frediv1:inst10|clk_out_1KHZ ; Rise       ; inst4|inst|inst|sub|87|clk                           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; frediv1:inst10|clk_out_1KHZ ; Rise       ; inst4|inst|inst|sub|9|clk                            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; frediv1:inst10|clk_out_1KHZ ; Rise       ; inst4|inst|inst|sub|9|clk                            ;
++--------+--------------+----------------+------------------+-----------------------------+------------+------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; echo      ; clk        ; 8.140 ; 8.140 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; echo      ; clk        ; -7.219 ; -7.219 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                  ;
++-----------+-----------------------------+---------+---------+------------+-----------------------------+
+; Data Port ; Clock Port                  ; Rise    ; Fall    ; Clock Edge ; Clock Reference             ;
++-----------+-----------------------------+---------+---------+------------+-----------------------------+
+; qa        ; clk                         ; 415.990 ; 415.990 ; Rise       ; clk                         ;
+; qb        ; clk                         ; 415.995 ; 415.995 ; Rise       ; clk                         ;
+; qc        ; clk                         ; 415.993 ; 415.993 ; Rise       ; clk                         ;
+; qd        ; clk                         ; 416.038 ; 416.038 ; Rise       ; clk                         ;
+; qe        ; clk                         ; 416.031 ; 416.031 ; Rise       ; clk                         ;
+; qf        ; clk                         ; 416.323 ; 416.323 ; Rise       ; clk                         ;
+; qg        ; clk                         ; 416.322 ; 416.322 ; Rise       ; clk                         ;
+; trig      ; clk                         ; 7.877   ; 7.877   ; Rise       ; clk                         ;
+; bsg[*]    ; frediv1:inst10|clk_out_1KHZ ; 13.199  ; 13.199  ; Rise       ; frediv1:inst10|clk_out_1KHZ ;
+;  bsg[0]   ; frediv1:inst10|clk_out_1KHZ ; 13.199  ; 13.199  ; Rise       ; frediv1:inst10|clk_out_1KHZ ;
+;  bsg[1]   ; frediv1:inst10|clk_out_1KHZ ; 11.622  ; 11.622  ; Rise       ; frediv1:inst10|clk_out_1KHZ ;
+; qa        ; frediv1:inst10|clk_out_1KHZ ; 17.350  ; 17.350  ; Rise       ; frediv1:inst10|clk_out_1KHZ ;
+; qb        ; frediv1:inst10|clk_out_1KHZ ; 17.355  ; 17.355  ; Rise       ; frediv1:inst10|clk_out_1KHZ ;
+; qc        ; frediv1:inst10|clk_out_1KHZ ; 17.353  ; 17.353  ; Rise       ; frediv1:inst10|clk_out_1KHZ ;
+; qd        ; frediv1:inst10|clk_out_1KHZ ; 17.398  ; 17.398  ; Rise       ; frediv1:inst10|clk_out_1KHZ ;
+; qe        ; frediv1:inst10|clk_out_1KHZ ; 17.391  ; 17.391  ; Rise       ; frediv1:inst10|clk_out_1KHZ ;
+; qf        ; frediv1:inst10|clk_out_1KHZ ; 17.683  ; 17.683  ; Rise       ; frediv1:inst10|clk_out_1KHZ ;
+; qg        ; frediv1:inst10|clk_out_1KHZ ; 17.682  ; 17.682  ; Rise       ; frediv1:inst10|clk_out_1KHZ ;
+; sou       ; voice2:inst5|zj             ; 5.902   ;         ; Rise       ; voice2:inst5|zj             ;
+; sou       ; voice2:inst5|zj             ; 10.139  ; 10.139  ; Fall       ; voice2:inst5|zj             ;
++-----------+-----------------------------+---------+---------+------------+-----------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                        ;
++-----------+-----------------------------+--------+--------+------------+-----------------------------+
+; Data Port ; Clock Port                  ; Rise   ; Fall   ; Clock Edge ; Clock Reference             ;
++-----------+-----------------------------+--------+--------+------------+-----------------------------+
+; qa        ; clk                         ; 14.303 ; 14.303 ; Rise       ; clk                         ;
+; qb        ; clk                         ; 14.311 ; 14.311 ; Rise       ; clk                         ;
+; qc        ; clk                         ; 14.244 ; 14.244 ; Rise       ; clk                         ;
+; qd        ; clk                         ; 14.328 ; 14.328 ; Rise       ; clk                         ;
+; qe        ; clk                         ; 14.325 ; 14.325 ; Rise       ; clk                         ;
+; qf        ; clk                         ; 14.628 ; 14.628 ; Rise       ; clk                         ;
+; qg        ; clk                         ; 14.631 ; 14.631 ; Rise       ; clk                         ;
+; trig      ; clk                         ; 7.877  ; 7.877  ; Rise       ; clk                         ;
+; bsg[*]    ; frediv1:inst10|clk_out_1KHZ ; 11.622 ; 11.622 ; Rise       ; frediv1:inst10|clk_out_1KHZ ;
+;  bsg[0]   ; frediv1:inst10|clk_out_1KHZ ; 13.047 ; 13.047 ; Rise       ; frediv1:inst10|clk_out_1KHZ ;
+;  bsg[1]   ; frediv1:inst10|clk_out_1KHZ ; 11.622 ; 11.622 ; Rise       ; frediv1:inst10|clk_out_1KHZ ;
+; qa        ; frediv1:inst10|clk_out_1KHZ ; 13.013 ; 13.013 ; Rise       ; frediv1:inst10|clk_out_1KHZ ;
+; qb        ; frediv1:inst10|clk_out_1KHZ ; 13.018 ; 13.018 ; Rise       ; frediv1:inst10|clk_out_1KHZ ;
+; qc        ; frediv1:inst10|clk_out_1KHZ ; 12.733 ; 12.733 ; Rise       ; frediv1:inst10|clk_out_1KHZ ;
+; qd        ; frediv1:inst10|clk_out_1KHZ ; 13.549 ; 13.549 ; Rise       ; frediv1:inst10|clk_out_1KHZ ;
+; qe        ; frediv1:inst10|clk_out_1KHZ ; 13.546 ; 13.546 ; Rise       ; frediv1:inst10|clk_out_1KHZ ;
+; qf        ; frediv1:inst10|clk_out_1KHZ ; 13.345 ; 13.345 ; Rise       ; frediv1:inst10|clk_out_1KHZ ;
+; qg        ; frediv1:inst10|clk_out_1KHZ ; 13.345 ; 13.345 ; Rise       ; frediv1:inst10|clk_out_1KHZ ;
+; sou       ; voice2:inst5|zj             ; 5.902  ;        ; Rise       ; voice2:inst5|zj             ;
+; sou       ; voice2:inst5|zj             ; 10.139 ; 5.902  ; Fall       ; voice2:inst5|zj             ;
++-----------+-----------------------------+--------+--------+------------+-----------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                       ;
++-----------------------------+-----------------------------+----------+----------+----------+----------+
+; From Clock                  ; To Clock                    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------------+-----------------------------+----------+----------+----------+----------+
+; clk                         ; clk                         ; 1629     ; 0        ; 0        ; 0        ;
+; frediv1:inst10|clk_out_1KHZ ; frediv1:inst10|clk_out_1KHZ ; 6        ; 0        ; 0        ; 0        ;
+; frediv2:inst9|clk_out_1KHZ  ; frediv2:inst9|clk_out_1KHZ  ; 14       ; 0        ; 0        ; 0        ;
+; voice2:inst5|zj             ; frediv2:inst9|clk_out_1KHZ  ; 1        ; 1        ; 0        ; 0        ;
+; voice2:inst5|zj             ; voice2:inst5|zj             ; 0        ; 0        ; 0        ; 248      ;
++-----------------------------+-----------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                        ;
++-----------------------------+-----------------------------+----------+----------+----------+----------+
+; From Clock                  ; To Clock                    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------------+-----------------------------+----------+----------+----------+----------+
+; clk                         ; clk                         ; 1629     ; 0        ; 0        ; 0        ;
+; frediv1:inst10|clk_out_1KHZ ; frediv1:inst10|clk_out_1KHZ ; 6        ; 0        ; 0        ; 0        ;
+; frediv2:inst9|clk_out_1KHZ  ; frediv2:inst9|clk_out_1KHZ  ; 14       ; 0        ; 0        ; 0        ;
+; voice2:inst5|zj             ; frediv2:inst9|clk_out_1KHZ  ; 1        ; 1        ; 0        ; 0        ;
+; voice2:inst5|zj             ; voice2:inst5|zj             ; 0        ; 0        ; 0        ; 248      ;
++-----------------------------+-----------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------------------------------+
+; Recovery Transfers                                                                                    ;
++-----------------------------+-----------------------------+----------+----------+----------+----------+
+; From Clock                  ; To Clock                    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------------+-----------------------------+----------+----------+----------+----------+
+; clk                         ; clk                         ; 32       ; 0        ; 0        ; 0        ;
+; frediv1:inst10|clk_out_1KHZ ; frediv1:inst10|clk_out_1KHZ ; 2        ; 0        ; 0        ; 0        ;
+; frediv2:inst9|clk_out_1KHZ  ; frediv2:inst9|clk_out_1KHZ  ; 20       ; 0        ; 0        ; 0        ;
++-----------------------------+-----------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------------------------------+
+; Removal Transfers                                                                                     ;
++-----------------------------+-----------------------------+----------+----------+----------+----------+
+; From Clock                  ; To Clock                    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------------+-----------------------------+----------+----------+----------+----------+
+; clk                         ; clk                         ; 32       ; 0        ; 0        ; 0        ;
+; frediv1:inst10|clk_out_1KHZ ; frediv1:inst10|clk_out_1KHZ ; 2        ; 0        ; 0        ; 0        ;
+; frediv2:inst9|clk_out_1KHZ  ; frediv2:inst9|clk_out_1KHZ  ; 20       ; 0        ; 0        ; 0        ;
++-----------------------------+-----------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 32    ; 32   ;
+; Unconstrained Output Ports      ; 11    ; 11   ;
+; Unconstrained Output Port Paths ; 244   ; 244  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+    Info: Processing started: Mon May 28 16:48:12 2018
+Info: Command: quartus_sta manage -c manage
+Info: qsta_default_script.tcl version: #1
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Warning (335093): TimeQuest Timing Analyzer is analyzing 4 combinational loops as latches.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'manage.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+    Info (332105): create_clock -period 1.000 -name voice2:inst5|zj voice2:inst5|zj
+    Info (332105): create_clock -period 1.000 -name frediv2:inst9|clk_out_1KHZ frediv2:inst9|clk_out_1KHZ
+    Info (332105): create_clock -period 1.000 -name frediv1:inst10|clk_out_1KHZ frediv1:inst10|clk_out_1KHZ
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -3.893
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.893      -185.464 clk 
+    Info (332119):    -3.797       -37.158 voice2:inst5|zj 
+    Info (332119):    -0.978        -1.945 frediv1:inst10|clk_out_1KHZ 
+    Info (332119):    -0.768        -3.018 frediv2:inst9|clk_out_1KHZ 
+Info (332146): Worst-case hold slack is -2.979
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.979        -2.979 frediv2:inst9|clk_out_1KHZ 
+    Info (332119):     1.045         0.000 clk 
+    Info (332119):     1.240         0.000 frediv1:inst10|clk_out_1KHZ 
+    Info (332119):     1.321         0.000 voice2:inst5|zj 
+Info (332146): Worst-case recovery slack is -5.036
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -5.036       -25.180 frediv2:inst9|clk_out_1KHZ 
+    Info (332119):    -3.953      -126.496 clk 
+    Info (332119):    -3.951        -7.902 frediv1:inst10|clk_out_1KHZ 
+Info (332146): Worst-case removal slack is 4.899
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     4.899         0.000 frediv1:inst10|clk_out_1KHZ 
+    Info (332119):     4.901         0.000 clk 
+    Info (332119):     5.558         0.000 frediv2:inst9|clk_out_1KHZ 
+Info (332146): Worst-case minimum pulse width slack is -1.583
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.583      -165.015 clk 
+    Info (332119):    -1.318       -26.360 voice2:inst5|zj 
+    Info (332119):    -1.318       -13.180 frediv2:inst9|clk_out_1KHZ 
+    Info (332119):    -1.318        -7.908 frediv1:inst10|clk_out_1KHZ 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 460 megabytes
+    Info: Processing ended: Mon May 28 16:48:13 2018
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
+
+

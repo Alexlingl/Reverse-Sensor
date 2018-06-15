@@ -1,0 +1,223 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect 104 264 272 280)
+	(text "INPUT" (rect 125 0 161 13)(font "Arial" (font_size 6)))
+	(text "clk" (rect 5 0 23 15)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 152 20)(font "Arial" (font_size 6)))
+)
+(pin
+	(output)
+	(rect 1104 232 1280 248)
+	(text "OUTPUT" (rect 1 0 51 13)(font "Arial" (font_size 6)))
+	(text "sou" (rect 90 0 114 15)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(symbol
+	(rect 232 104 432 184)
+	(text "diffdis" (rect 5 0 43 15)(font "Arial" ))
+	(text "inst" (rect 8 64 31 79)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "distance[31..0]" (rect 0 0 94 15)(font "Arial" ))
+		(text "distance[31..0]" (rect 21 27 115 42)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 200 32)
+		(output)
+		(text "control[3..0]" (rect 0 0 74 15)(font "Arial" ))
+		(text "control[3..0]" (rect 117 27 191 42)(font "Arial" ))
+		(line (pt 200 32)(pt 184 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 184 64))
+	)
+)
+(symbol
+	(rect 272 240 448 352)
+	(text "frediv" (rect 5 0 39 15)(font "Arial" ))
+	(text "inst1" (rect 8 96 39 111)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk_in" (rect 0 0 37 15)(font "Arial" ))
+		(text "clk_in" (rect 21 27 58 42)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 176 32)
+		(output)
+		(text "clk_out_10hz" (rect 0 0 84 15)(font "Arial" ))
+		(text "clk_out_10hz" (rect 84 27 168 42)(font "Arial" ))
+		(line (pt 176 32)(pt 160 32))
+	)
+	(port
+		(pt 176 48)
+		(output)
+		(text "clk_out_100hz" (rect 0 0 93 15)(font "Arial" ))
+		(text "clk_out_100hz" (rect 77 43 170 58)(font "Arial" ))
+		(line (pt 176 48)(pt 160 48))
+	)
+	(port
+		(pt 176 64)
+		(output)
+		(text "clk_out_1khz" (rect 0 0 83 15)(font "Arial" ))
+		(text "clk_out_1khz" (rect 85 59 168 74)(font "Arial" ))
+		(line (pt 176 64)(pt 160 64))
+	)
+	(drawing
+		(rectangle (rect 16 16 160 96))
+	)
+)
+(symbol
+	(rect 616 224 808 336)
+	(text "choose" (rect 5 0 53 15)(font "Arial" ))
+	(text "inst2" (rect 8 96 39 111)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "chin[3..0]" (rect 0 0 57 15)(font "Arial" ))
+		(text "chin[3..0]" (rect 21 27 78 42)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "fre_div_10hz" (rect 0 0 81 15)(font "Arial" ))
+		(text "fre_div_10hz" (rect 21 43 102 58)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "fre_div_100hz" (rect 0 0 89 15)(font "Arial" ))
+		(text "fre_div_100hz" (rect 21 59 110 74)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "fre_div_1khz" (rect 0 0 80 15)(font "Arial" ))
+		(text "fre_div_1khz" (rect 21 75 101 90)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 192 32)
+		(output)
+		(text "res_fre" (rect 0 0 46 15)(font "Arial" ))
+		(text "res_fre" (rect 133 27 179 42)(font "Arial" ))
+		(line (pt 192 32)(pt 176 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 176 96))
+	)
+)
+(symbol
+	(rect 936 208 1104 288)
+	(text "sound" (rect 5 0 46 15)(font "Arial" ))
+	(text "inst3" (rect 8 64 39 79)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "chin[3..0]" (rect 0 0 57 15)(font "Arial" ))
+		(text "chin[3..0]" (rect 21 27 78 42)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "fre_in" (rect 0 0 36 15)(font "Arial" ))
+		(text "fre_in" (rect 21 43 57 58)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 168 32)
+		(output)
+		(text "fre_out" (rect 0 0 44 15)(font "Arial" ))
+		(text "fre_out" (rect 110 27 154 42)(font "Arial" ))
+		(line (pt 168 32)(pt 152 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 152 64))
+	)
+)
+(connector
+	(pt 448 272)
+	(pt 616 272)
+)
+(connector
+	(pt 448 288)
+	(pt 616 288)
+)
+(connector
+	(pt 448 304)
+	(pt 616 304)
+)
+(connector
+	(text "control[3..0]" (rect 432 120 506 135)(font "Arial" ))
+	(pt 432 136)
+	(pt 472 136)
+	(bus)
+)
+(connector
+	(text "control[3..0]" (rect 576 240 650 255)(font "Arial" ))
+	(pt 616 256)
+	(pt 576 256)
+	(bus)
+)
+(connector
+	(text "control[3..0]" (rect 880 224 954 239)(font "Arial" ))
+	(pt 936 240)
+	(pt 880 240)
+	(bus)
+)
+(connector
+	(pt 808 256)
+	(pt 936 256)
+)
+(connector
+	(text "distance[31..0]" (rect 184 120 278 135)(font "Arial" ))
+	(pt 232 136)
+	(pt 184 136)
+	(bus)
+)

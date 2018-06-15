@@ -1,0 +1,50 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+entity frediv is
+  port(clk_in:in std_logic;
+       clk_out_10hz: buffer std_logic;
+		 clk_out_100hz:buffer std_logic;
+		 clk_out_1khz:buffer std_logic);
+end frediv;
+
+architecture fun1 of frediv is 
+signal count1:integer;
+signal count2:integer;
+begin 
+  process(clk_in)
+  begin 
+  if(clk_in'event and clk_in='1') then 
+    if(count1<100) then 
+	   clk_out_10hz<='1';
+		count1<=count1+1;
+	 elsif(count1>=100) then
+	   clk_out_10hz<='0';
+		count1<=count1+1;
+	 end if;
+	end if;
+	if(count1>=200) then count1<=0;
+	end if;
+	end process;
+	
+  process(clk_in)
+  begin 
+  if(clk_in'event and clk_in='1') then 
+    if(count2<10) then 
+	   clk_out_100hz<='1';
+		count2<=count2+1;
+	 elsif(count2>=10) then
+	   clk_out_100hz<='0';
+		count2<=count2+1;
+	 end if;
+	end if;
+	if(count2>=20) then count2<=0;
+	end if;
+	end process;
+	
+  process(clk_in)
+  begin 
+  clk_out_1khz<=clk_in;
+  end process;
+end architecture;

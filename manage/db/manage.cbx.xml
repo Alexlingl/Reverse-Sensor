@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="manage">
+		<CBX_INST_ENTRY INSTANCE_NAME="|manage|devide:inst3|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_lko.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|manage|devide:inst3|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_h0m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|manage|replaynum:inst2|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_2mo.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|manage|devide:inst3|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_oko.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|manage|devide:inst3|lpm_divide:Mod1" CBX_FILE_NAME="lpm_divide_h0m.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

@@ -1,0 +1,28 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity frediv2 is
+port(clk_in_1MHZ:in std_logic;
+   clk_out_1KHZ:out std_logic);
+end frediv2;
+
+architecture behaviorial of frediv2 is
+signal temp_counter_1KHZ:std_logic:='0';
+begin
+  process(clk_in_1MHZ)
+  variable cnt:integer range 0 to 49;
+  begin
+  if(clk_in_1MHZ'event and clk_in_1MHZ='1')then
+    if(cnt<49)then
+	   cnt:=cnt+1;
+	 else
+	   cnt:=0;
+		temp_counter_1KHZ<=not temp_counter_1KHZ;
+	 end if;
+  end if;
+  clk_out_1KHZ<=temp_counter_1KHZ;
+  end process;
+end behaviorial;
+  

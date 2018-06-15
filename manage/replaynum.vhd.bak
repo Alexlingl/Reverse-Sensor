@@ -1,0 +1,19 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.std_logic_arith.all;
+
+entity replaynum is
+  port(datain:in std_logic_vector(15 downto 0);
+       dataout:buffer integer);
+end replaynum;
+
+architecture fun1 of replaynum is
+signal change:integer range 0 to 300;
+begin
+  process(datain)
+  begin 
+    change<=conv_integer(datain);
+	 dataout<=change*170/1000;
+  end process;
+end fun1;
